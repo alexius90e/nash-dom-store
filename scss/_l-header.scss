@@ -1,3 +1,103 @@
 .header {
+  &__info {
+    display: flex;
+    gap: 48px;
+    padding: 32px 0;
 
+    @include tablet {
+      padding: 34px 0 0;
+    }
+
+    @include mobile {
+      display: none;
+    }
+
+    &-address {
+      flex: 1 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      @include laptop {
+        display: none;
+      }
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background: url(../assets/icons/tag.svg) center no-repeat;
+      }
+
+      &-text {
+        color: $blue;
+      }
+
+      &-button {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        background: url(../assets/icons/arrow-1.svg) center no-repeat;
+        border: none;
+      }
+    }
+
+    &-time {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: $blue;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background: url(../assets/icons/clock.svg) center no-repeat;
+      }
+    }
+
+    &-email {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      @include laptop {
+        display: none;
+      }
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background: url(../assets/icons/mail.svg) center no-repeat;
+      }
+
+      & a {
+        color: $blue;
+      }
+    }
+
+    &-phone {
+      flex: 1 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background: url(../assets/icons/phone.svg) center no-repeat;
+      }
+
+      & a {
+        color: $red;
+        font-weight: 500;
+      }
+    }
+  }
 }

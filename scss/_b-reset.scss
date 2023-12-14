@@ -1,12 +1,9 @@
-@font-face {
-  font-family: 'Airborne';
-  src: url('../fonts/airborne.ttf');
-}
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 
 html {
-  color: $white;
+  color: $black;
   font-size: 1rem;
-  font-family: 'Airborne', 'Open Sans', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-weight: 400;
   font-style: normal;
   scroll-behavior: smooth;
@@ -21,7 +18,7 @@ a,
 button,
 input,
 textarea {
-  font-family: 'Airborne', 'Open Sans', sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 
 a {
@@ -39,4 +36,15 @@ p {
 ul {
   margin: 16px 0;
   padding-left: 18px;
+}
+
+.text-16 {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+
+  @include tablet {
+    font-size: 14px;
+  }
 }

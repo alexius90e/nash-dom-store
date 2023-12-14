@@ -1,0 +1,42 @@
+.main-nav {
+  &__menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0  -40px;
+    padding: 20px 40px;
+    background-color: $grey100;
+
+    &-item {
+    }
+
+    &-link {
+      color: $blue;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 14px;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__submenu {
+    display: none;
+    list-style-type: none;
+
+    &-item {
+    }
+
+    &-link {
+      color: $blue;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 14px;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+    }
+  }
+}
