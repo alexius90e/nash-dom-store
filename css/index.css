@@ -1,0 +1,48 @@
+@font-face {
+  font-family: "Airborne";
+  src: url("../fonts/airborne.ttf");
+}
+html {
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: "Airborne", "Open Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  margin: 0;
+}
+
+a,
+button,
+input,
+textarea {
+  font-family: "Airborne", "Open Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+figure {
+  margin: 0;
+}
+
+p {
+  margin: 16px 0;
+}
+
+ul {
+  margin: 16px 0;
+  padding-left: 18px;
+}
+
+.container {
+  max-width: 1470px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
