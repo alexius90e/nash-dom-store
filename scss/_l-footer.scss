@@ -1,2 +1,210 @@
 .footer {
+  & .container {
+    display: flex;
+    gap: 20px;
+    padding-top: 24px;
+    padding-bottom: 46px;
+    background-color: $grey100;
+
+    @include laptop {
+      flex-wrap: wrap;
+      gap: 56px 20px;
+    }
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  &__title {
+    margin: 0 0 24px;
+    color: $blue;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+
+    @include mobile {
+      margin: 0 0 12px;
+      text-align: center;
+      font-size: 16px;
+    }
+  }
+
+  &__logo {
+    flex: 0 0 183px;
+
+    @include laptop {
+      flex: 1 1 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @include mobile {
+      margin: 0 0 22px;
+    }
+
+    &-logo {
+      & img {
+        max-width: 183px;
+        height: auto;
+        width: 100%;
+
+        @include tablet {
+          max-width: 170px;
+        }
+
+        @include mobile {
+          max-width: 124px;
+        }
+      }
+    }
+
+    &-phone {
+      display: none;
+      color: $red;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 16px;
+
+      @include laptop {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      @include mobile {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 14px;
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        height: 24px;
+        width: 24px;
+        background: url(../assets/icons/phone.svg) center no-repeat;
+      }
+    }
+  }
+
+  &__company {
+    flex: 1 1 284px;
+
+    @include laptop {
+      flex: 1 1 30%;
+    }
+
+    @include tablet {
+      display: none;
+    }
+
+    &-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+
+      &-link {
+        color: $blue;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 25px;
+      }
+    }
+  }
+
+  &__nav {
+    flex: 1 1 284px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include laptop {
+      flex: 1 1 30%;
+    }
+
+    @include tablet {
+      gap: 40px;
+    }
+
+    @include mobile {
+      align-items: center;
+      gap: 24px;
+      margin: 0 0 40px;
+    }
+
+    &-link {
+      color: $blue;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 30px;
+
+      @include mobile {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &__contacts {
+    flex: 1 1 386px;
+
+    @include laptop {
+      flex: 1 1 30%;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+
+      @include mobile {
+        align-items: center;
+      }
+
+      &-item {
+        max-width: 322px;
+        color: $blue;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+
+        @include mobile {
+          text-align: center;
+        }
+
+        &_phones {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          padding: 16px 0;
+
+          @include mobile {
+            padding: 0;
+          }
+        }
+      }
+    }
+
+    &-link {
+      color: $blue;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+    }
+  }
 }
