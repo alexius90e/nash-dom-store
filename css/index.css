@@ -49,6 +49,42 @@ ul {
   }
 }
 
+.h2 {
+  margin: 0 0 32px;
+  color: #041862;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 42px;
+}
+@media (max-width: 768px) {
+  .h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+@media (max-width: 576px) {
+  .h2 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
+  }
+}
+
+.section {
+  padding: 60px 0;
+}
+@media (max-width: 768px) {
+  .section {
+    padding: 48px 0;
+  }
+}
+@media (max-width: 576px) {
+  .section {
+    padding: 32px 0;
+  }
+}
+
 .container {
   max-width: 1280px;
   margin: 0 auto;
@@ -342,6 +378,7 @@ ul {
   border: none;
   border-radius: 4px;
   background-color: #041862;
+  transition: all ease-in-out 0.15s;
   cursor: pointer;
 }
 @media (max-width: 992px) {
@@ -349,6 +386,9 @@ ul {
     padding: 8px 15px;
     font-size: 16px;
   }
+}
+.header__catalog-button:hover {
+  background-color: #0535DF;
 }
 .header__catalog-button::before {
   content: "";
@@ -610,4 +650,89 @@ ul {
   width: 12px;
   height: 12px;
   background-color: #041862;
+}
+
+.why-we__title {
+  margin-bottom: 72px;
+}
+@media (max-width: 768px) {
+  .why-we__title {
+    margin-bottom: 48px;
+  }
+}
+@media (max-width: 576px) {
+  .why-we__title {
+    margin-bottom: 32px;
+  }
+}
+.why-we__cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+@media (max-width: 992px) {
+  .why-we__cards {
+    gap: 48px 16px;
+  }
+}
+@media (max-width: 576px) {
+  .why-we__cards {
+    gap: 20px 12px;
+  }
+}
+.why-we__card {
+  flex: 1 1 calc(25% - 20px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 36px;
+}
+@media (max-width: 992px) {
+  .why-we__card {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+@media (max-width: 576px) {
+  .why-we__card {
+    gap: 22px;
+  }
+}
+.why-we__card-figure {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 0;
+  padding: 0;
+  height: 150px;
+  width: 150px;
+  background-color: #ececec;
+}
+@media (max-width: 576px) {
+  .why-we__card-figure {
+    height: 78px;
+    width: 78px;
+  }
+}
+.why-we__card-figure img {
+  position: relative;
+  top: 12px;
+}
+@media (max-width: 576px) {
+  .why-we__card-figure img {
+    max-width: 80px;
+  }
+}
+.why-we__card-text {
+  color: #041862;
+  text-align: center;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+}
+@media (max-width: 576px) {
+  .why-we__card-text {
+    font-size: 14px;
+    line-height: 20px;
+  }
 }

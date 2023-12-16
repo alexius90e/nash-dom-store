@@ -1,5 +1,5 @@
 const swiper = new Swiper(".banners .swiper", {
-  // loop: true,
+  loop: true,
   centeredSlides: true,
   spaceBetween: 38,
   pagination: {
