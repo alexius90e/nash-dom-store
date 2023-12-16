@@ -1,0 +1,19 @@
+.divider {
+  @include tablet {
+    margin-bottom: 18px;
+  }
+
+  @include mobile {
+    margin-bottom: 24px;
+  }
+
+  & .container {
+    height: 48px;
+    border-top: 1px solid $grey300;
+    border-bottom: 1px solid $grey300;
+
+    @include mobile {
+      height: 32px;
+    }
+  }
+}

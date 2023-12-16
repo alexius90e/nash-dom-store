@@ -72,12 +72,11 @@ ul {
   align-items: center;
   gap: 0 20px;
   padding-bottom: 44px;
-  border-bottom: 1px solid #a0a6aa;
 }
 @media (max-width: 992px) {
   .header .container {
     gap: 20px;
-    padding-bottom: 30px;
+    padding-bottom: 36px;
   }
 }
 @media (max-width: 768px) {
@@ -518,4 +517,25 @@ ul {
   line-height: 14px;
   letter-spacing: 0.7px;
   text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .divider {
+    margin-bottom: 18px;
+  }
+}
+@media (max-width: 576px) {
+  .divider {
+    margin-bottom: 24px;
+  }
+}
+.divider .container {
+  height: 48px;
+  border-top: 1px solid #a0a6aa;
+  border-bottom: 1px solid #a0a6aa;
+}
+@media (max-width: 576px) {
+  .divider .container {
+    height: 32px;
+  }
 }

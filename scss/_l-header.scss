@@ -5,11 +5,10 @@
     align-items: center;
     gap: 0 20px;
     padding-bottom: 44px;
-    border-bottom: 1px solid $grey300;
 
     @include laptop {
       gap: 20px;
-      padding-bottom: 30px;
+      padding-bottom: 36px;
     }
 
     @include tablet {
