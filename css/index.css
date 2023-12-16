@@ -102,6 +102,137 @@ ul {
   }
 }
 
+.good-card {
+  padding: 8px 4px 24px;
+  border-radius: 4px;
+  border: 2px solid #a0a6aa;
+  background: #fff;
+}
+.good-card__figure {
+  padding: 0;
+  margin: 0 0 8px;
+  text-align: center;
+}
+.good-card__image {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+}
+@media (max-width: 768px) {
+  .good-card__image {
+    height: 164px;
+  }
+}
+@media (max-width: 576px) {
+  .good-card__image {
+    height: 152px;
+  }
+}
+.good-card__title {
+  height: 80px;
+  margin: 0 0 8px;
+  color: #041862;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+.good-card__info {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 0 0 44px;
+  color: #041862;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px;
+}
+.good-card__info-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 48px;
+}
+.good-card__info-rating::before {
+  content: "";
+  display: block;
+  height: 16px;
+  width: 16px;
+  background: url(../assets/icons/star-gold.svg) center no-repeat;
+}
+.good-card__info-rating.disabled::before {
+  background-image: url(../assets/icons/star-grey.svg);
+}
+.good-card__price {
+  margin: 0 0 24px;
+  color: #041862;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+.good-card__price span {
+  font-size: 20px;
+  line-height: 20px;
+}
+.good-card__controls {
+  display: flex;
+  justify-content: center;
+}
+.good-card__controls-buy {
+  display: inline-block;
+  max-width: 148px;
+  width: 100%;
+  padding: 8px;
+  color: #ffffff;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: #041862;
+}
+.good-card__controls.active .good-card__controls-buy {
+  display: none;
+}
+.good-card__controls-count {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+}
+.good-card__controls-count-minus, .good-card__controls-count-plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  width: 32px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #041862;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  border: 2px solid #041862;
+  border-radius: 6px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.good-card__controls-count-quantity {
+  color: #041862;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+}
+.good-card__controls.active .good-card__controls-count {
+  display: flex;
+}
+
 .header .container {
   display: flex;
   flex-wrap: wrap;
@@ -946,4 +1077,28 @@ ul {
     font-size: 14px;
     line-height: 20px;
   }
+}
+
+.novelty__cards {
+  position: relative;
+}
+.novelty .swiper-button-prev, .novelty .swiper-button-next {
+  height: 48px;
+  width: 48px;
+  background: url(../assets/icons/next-button.svg);
+}
+@media (max-width: 768px) {
+  .novelty .swiper-button-prev, .novelty .swiper-button-next {
+    display: none;
+  }
+}
+.novelty .swiper-button-prev::after, .novelty .swiper-button-next::after {
+  display: none;
+}
+.novelty .swiper-button-prev {
+  left: -17px;
+}
+.novelty .swiper-button-next {
+  right: -17px;
+  transform: rotate(180deg);
 }

@@ -1,14 +1,7 @@
-const swiper = new Swiper(".banners .swiper", {
+const bannersSwiper = new Swiper(".banners .swiper", {
   loop: true,
   centeredSlides: true,
   spaceBetween: 38,
-  pagination: {
-    el: ".banners .swiper-pagination",
-  },
-  navigation: {
-    nextEl: ".banners .swiper-button-next",
-    prevEl: ".banners .swiper-button-prev",
-  },
   breakpoints: {
     320: {
       slidesPerView: 1.25,
@@ -21,5 +14,37 @@ const swiper = new Swiper(".banners .swiper", {
     992: {
       slidesPerView: 1,
     },
+  },
+  pagination: {
+    el: ".banners .swiper-pagination",
+  },
+  navigation: {
+    nextEl: ".banners .swiper-button-next",
+    prevEl: ".banners .swiper-button-prev",
+  },
+});
+
+const noveltySwiper = new Swiper(".novelty .swiper", {
+  loop: true,
+  spaceBetween: 20,
+  breakpoints: {
+    320: {
+      slidesPerView: 1.5,
+      spaceBetween: 12,
+      centeredSlides: true,
+    },
+    568: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      
+    },
+    992: {
+      slidesPerView: 4,
+      centeredSlides: false,
+    },
+  },
+  navigation: {
+    nextEl: ".novelty .swiper-button-next",
+    prevEl: ".novelty .swiper-button-prev",
   },
 });
