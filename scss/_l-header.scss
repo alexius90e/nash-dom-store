@@ -1,11 +1,36 @@
 .header {
+  & .container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 20px;
+    padding-bottom: 44px;
+    border-bottom: 1px solid $grey300;
+
+    @include laptop {
+      gap: 20px;
+      padding-bottom: 30px;
+    }
+
+    @include tablet {
+      gap: 20px 16px;
+    }
+
+    @include mobile {
+      gap: 20px 12px;
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+  }
+
   &__info {
+    flex: 1 1 100%;
     display: flex;
     gap: 48px;
     padding: 32px 0;
 
-    @include tablet {
-      padding: 34px 0 0;
+    @include laptop {
+      padding: 32px 0 0;
     }
 
     @include mobile {
@@ -97,6 +122,320 @@
       & a {
         color: $red;
         font-weight: 500;
+      }
+    }
+  }
+
+  & .main-nav {
+    flex: 1 1 100%;
+    margin-bottom: 32px;
+
+    @include laptop {
+      display: none;
+    }
+  }
+
+  &__logo {
+    flex: 0 0 auto;
+    margin-right: 16px;
+
+    @include desktop {
+      margin-right: 0;
+    }
+
+    @include mobile {
+      flex: 1 1 calc(100% - 200px);
+      order: 1;
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+
+      @include mobile {
+        justify-content: center;
+      }
+    }
+
+    &-image {
+      max-width: 183px;
+      width: 100%;
+      height: auto;
+
+      @include laptop {
+        max-width: 170px;
+      }
+
+      @include mobile {
+        max-width: 124px;
+      }
+    }
+  }
+
+  &__burger {
+    flex: 0 0 40px;
+    display: none;
+
+    @include laptop {
+      display: block;
+    }
+
+    @include mobile {
+      flex: 0 0 24px;
+      order: 0;
+      margin-left: 24px;
+    }
+
+    &-button {
+      width: 40px;
+      height: 40px;
+      border: none;
+      background: url(../assets/icons/burger-big.svg) center no-repeat;
+
+      @include mobile {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+
+  &__menu {
+    flex: 1 1 calc(100% - 360px);
+    display: none;
+    height: 40px;
+
+    @include laptop {
+      display: flex;
+      gap: 40px;
+    }
+
+    @include mobile {
+      flex: 1 1 100%;
+      justify-content: center;
+      gap: 8px;
+      order: 5;
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+
+      @include mobile {
+        gap: 3px;
+      }
+
+      &_discont {
+        display: none;
+
+        @include mobile {
+          display: flex;
+        }
+      }
+
+      &-image {
+        width: 32px;
+        height: 32px;
+
+        @include mobile {
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+      &-text {
+        color: $blue;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+
+        @include mobile {
+          font-size: 14px;
+          line-height: 16px;
+        }
+      }
+    }
+  }
+
+  &__catalog {
+    flex: 0 0 auto;
+
+    @include mobile {
+      order: 3;
+    }
+
+    &-button {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 30px;
+      color: $white;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+      border: none;
+      border-radius: 4px;
+      background-color: $blue;
+      cursor: pointer;
+
+      @include laptop {
+        padding: 8px 15px;
+        font-size: 16px;
+      }
+
+      @include mobile {
+      }
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: url(../assets/icons/burger.svg) center no-repeat;
+
+        @include mobile {
+          display: none;
+        }
+      }
+    }
+
+    &-menu {
+      display: none;
+
+      &-item {
+      }
+
+      &-link {
+      }
+    }
+
+    &-submenu {
+      &-item {
+      }
+
+      &-link {
+      }
+    }
+  }
+
+  &__search {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    border: 2px solid $blue;
+    border-radius: 4px;
+    background: $blue;
+
+    @include mobile {
+      flex: 1 1 50%;
+      order: 4;
+    }
+
+    &-input {
+      flex: 1 1 auto;
+      display: block;
+      width: 20px;
+      padding: 11px 17px;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 18px;
+      border: none;
+      border-radius: 4px;
+      box-sizing: border-box;
+
+      @include laptop {
+        font-size: 12px;
+      }
+
+      &:focus {
+        outline: 1px solid rgba($color: $blue, $alpha: 1);
+      }
+    }
+
+    &-button {
+      flex: 0 0 auto;
+      display: inline-block;
+      height: 40px;
+      width: 62px;
+      box-sizing: border-box;
+      border: none;
+      background: url(../assets/icons/loupe.svg) center no-repeat;
+      cursor: pointer;
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__links {
+    flex: 1 1 286px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 286px;
+
+    @include desktop {
+      flex: 1 1 auto;
+      max-width: 228px;
+    }
+
+    @include mobile {
+      flex: 0 0 24px;
+      order: 2;
+      gap: 28px;
+    }
+  }
+
+  &__link {
+    flex: 0 0 82px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    @include laptop {
+      flex: 0 0 76px;
+    }
+
+    @include mobile {
+      flex: 0 0 24px;
+    }
+
+    &_discont {
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &-image {
+      width: 32px;
+      height: 32px;
+
+      @include mobile {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &-text {
+      color: $blue;
+      text-align: center;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 20px;
+
+      @include mobile {
+        display: none;
+      }
+
+      @include mobile {
+        display: none;
       }
     }
   }
