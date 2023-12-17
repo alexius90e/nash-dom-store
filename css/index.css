@@ -1335,3 +1335,135 @@ ul {
     line-height: 20px;
   }
 }
+
+.services .container {
+  position: relative;
+}
+@media (max-width: 768px) {
+  .services .container {
+    padding-bottom: 80px;
+  }
+}
+@media (max-width: 576px) {
+  .services .container {
+    padding-bottom: 50px;
+  }
+}
+.services__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 56px;
+}
+@media (max-width: 768px) {
+  .services__title {
+    margin: 0 0 48px;
+  }
+}
+@media (max-width: 576px) {
+  .services__title {
+    margin: 0 0 24px;
+  }
+}
+.services__title-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #041862;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+}
+@media (max-width: 768px) {
+  .services__title-link {
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+  }
+}
+@media (max-width: 576px) {
+  .services__title-link {
+    font-size: 16px;
+    line-height: 20px;
+    right: 10px;
+  }
+}
+.services__title-link::after {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: url(../assets/icons/arrow-long.svg) center no-repeat;
+}
+@media (max-width: 576px) {
+  .services__title-link::after {
+    width: 24px;
+    height: 24px;
+    background-size: 20px;
+  }
+}
+.services__cards {
+  margin-bottom: 40px;
+}
+@media (max-width: 768px) {
+  .services__cards {
+    margin-bottom: 0;
+  }
+}
+.services__card {
+  padding: 6px;
+  border-radius: 4px;
+  background-color: #ececec;
+}
+.services__card-figure {
+  margin: 0;
+  padding: 0;
+}
+.services__card-image {
+  max-width: 100%;
+  height: auto;
+}
+.services__card-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 102px;
+  margin: 0 0 6px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+}
+@media (max-width: 576px) {
+  .services__card-title {
+    height: 82px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+.services__controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+@media (max-width: 768px) {
+  .services__controls {
+    display: none;
+  }
+}
+.services__controls-button {
+  display: inline-block;
+  padding: 14px 35px;
+  color: #ffffff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  background-color: #041862;
+}

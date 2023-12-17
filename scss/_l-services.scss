@@ -1,0 +1,133 @@
+.services {
+  & .container {
+    position: relative;
+
+    @include tablet {
+      padding-bottom: 80px;
+    }
+
+    @include mobile {
+      padding-bottom: 50px;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 56px;
+
+    @include tablet {
+      margin: 0 0 48px;
+    }
+
+    @include mobile {
+      margin: 0 0 24px;
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: $blue;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 32px;
+
+      @include tablet {
+        position: absolute;
+        bottom: 0;
+        right: 20px;
+      }
+
+      @include mobile {
+        font-size: 16px;
+        line-height: 20px;
+        right: 10px;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        width: 32px;
+        height: 32px;
+        background: url(../assets/icons/arrow-long.svg) center no-repeat;
+
+        @include mobile {
+          width: 24px;
+          height: 24px;
+          background-size: 20px;
+        }
+      }
+    }
+  }
+
+  &__cards {
+    margin-bottom: 40px;
+
+    @include tablet {
+      margin-bottom: 0;
+    }
+  }
+
+  &__card {
+    padding: 6px;
+    border-radius: 4px;
+    background-color: $grey100;
+
+    &-figure {
+      margin: 0;
+      padding: 0;
+    }
+
+    &-image {
+      max-width: 100%;
+      height: auto;
+    }
+
+    &-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 102px;
+      margin: 0 0 6px;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+      text-align: center;
+
+      @include mobile {
+        height: 82px;
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    @include tablet {
+      display: none;
+    }
+
+    &-button {
+      display: inline-block;
+      padding: 14px 35px;
+      color: $white;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 20px;
+      letter-spacing: 0.7px;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 4px;
+      background-color: $blue;
+    }
+  }
+}
