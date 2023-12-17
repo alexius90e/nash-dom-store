@@ -1415,6 +1415,10 @@ ul {
   padding: 6px;
   border-radius: 4px;
   background-color: #ececec;
+  transition: all ease-in-out 0.15s;
+}
+.services__card:hover {
+  filter: brightness(0.8);
 }
 .services__card-figure {
   margin: 0;
@@ -1466,4 +1470,109 @@ ul {
   border: none;
   border-radius: 4px;
   background-color: #041862;
+  transition: all ease-in-out 0.15s;
+}
+.services__controls-button:hover {
+  background-color: #0535DF;
+}
+
+.about__title {
+  margin: 0 0 56px;
+}
+@media (max-width: 768px) {
+  .about__title {
+    margin: 0 0 48px;
+  }
+}
+@media (max-width: 576px) {
+  .about__title {
+    margin: 0 0 24px;
+  }
+}
+.about__content {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
+@media (max-width: 768px) {
+  .about__content {
+    display: block;
+  }
+}
+.about__content-text {
+  flex: 0 1 690px;
+  max-width: 690px;
+  color: #041862;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+@media (max-width: 768px) {
+  .about__content-text {
+    margin-bottom: 32px;
+  }
+}
+@media (max-width: 576px) {
+  .about__content-text {
+    margin-bottom: 16px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+.about__content-text-image {
+  display: none;
+}
+@media (max-width: 768px) {
+  .about__content-text-image {
+    display: inline-block;
+    max-width: 232px;
+    height: auto;
+    float: right;
+    padding-left: 16px;
+    padding-bottom: 16px;
+  }
+}
+@media (max-width: 576px) {
+  .about__content-text-image {
+    display: none;
+  }
+}
+.about__content-text p {
+  margin: 0 0 24px;
+}
+@media (max-width: 576px) {
+  .about__content-text p {
+    margin: 0 0 20px;
+  }
+}
+.about__content-text p:last-child {
+  margin: 0;
+}
+.about__content-sidebar {
+  flex: 0 1 386px;
+}
+.about__content-sidebar-image {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 16px;
+}
+@media (max-width: 768px) {
+  .about__content-sidebar-image {
+    display: none;
+  }
+}
+.about__content-sidebar-link {
+  color: #041862;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+@media (max-width: 576px) {
+  .about__content-sidebar-link {
+    font-size: 14px;
+    line-height: 20px;
+  }
 }

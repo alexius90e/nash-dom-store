@@ -1,3 +1,100 @@
 .about {
-  
+  &__title {
+    margin: 0 0 56px;
+
+    @include tablet {
+      margin: 0 0 48px;
+    }
+
+    @include mobile {
+      margin: 0 0 24px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+
+    @include tablet {
+      display: block;
+    }
+
+    &-text {
+      flex: 0 1 690px;
+      max-width: 690px;
+      color: $blue;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+
+      @include tablet {
+        margin-bottom: 32px;
+      }
+
+      @include mobile {
+        margin-bottom: 16px;
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      &-image {
+        display: none;
+
+        @include tablet {
+          display: inline-block;
+          max-width: 232px;
+          height: auto;
+          float: right;
+          padding-left: 16px;
+          padding-bottom: 16px;
+        }
+
+        @include mobile {
+          display: none;
+        }
+      }
+
+      & p {
+        margin: 0 0 24px;
+
+        @include mobile {
+          margin: 0 0 20px;
+        }
+
+        &:last-child {
+          margin: 0;
+        }
+      }
+    }
+
+    &-sidebar {
+      flex: 0 1 386px;
+
+      &-image {
+        border-radius: 8px;
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 16px;
+
+        @include tablet {
+          display: none;
+        }
+      }
+
+      &-link {
+        color: $blue;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+
+        @include mobile {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
 }
