@@ -1206,3 +1206,132 @@ ul {
   right: -17px;
   transform: rotate(180deg);
 }
+
+.seasonal-offers .container {
+  padding-top: 32px;
+  padding-bottom: 69px;
+  background-color: #ececec;
+}
+@media (max-width: 768px) {
+  .seasonal-offers .container {
+    padding-top: 40px;
+  }
+}
+@media (max-width: 576px) {
+  .seasonal-offers .container {
+    padding-top: 16px;
+  }
+}
+.seasonal-offers__title {
+  margin: 0 0 56px;
+}
+@media (max-width: 768px) {
+  .seasonal-offers__title {
+    margin: 0 0 48px;
+  }
+}
+@media (max-width: 576px) {
+  .seasonal-offers__title {
+    margin: 0 0 23px;
+  }
+}
+.seasonal-offers__slider {
+  position: relative;
+}
+@media (max-width: 992px) {
+  .seasonal-offers__slider {
+    margin: 0 -40px;
+  }
+}
+@media (max-width: 768px) {
+  .seasonal-offers__slider {
+    margin: 0 -20px;
+  }
+}
+@media (max-width: 576px) {
+  .seasonal-offers__slider {
+    margin: 0 -10px;
+  }
+}
+.seasonal-offers__slider .swiper-button-prev, .seasonal-offers__slider .swiper-button-next {
+  top: 40%;
+  height: 48px;
+  width: 48px;
+  background: url(../assets/icons/next-button.svg);
+}
+@media (max-width: 768px) {
+  .seasonal-offers__slider .swiper-button-prev, .seasonal-offers__slider .swiper-button-next {
+    display: none;
+  }
+}
+.seasonal-offers__slider .swiper-button-prev::after, .seasonal-offers__slider .swiper-button-next::after {
+  display: none;
+}
+.seasonal-offers__slider .swiper-button-prev {
+  left: -17px;
+}
+@media (max-width: 992px) {
+  .seasonal-offers__slider .swiper-button-prev {
+    left: 10px;
+  }
+}
+.seasonal-offers__slider .swiper-button-next {
+  right: -17px;
+  transform: rotate(180deg);
+}
+@media (max-width: 992px) {
+  .seasonal-offers__slider .swiper-button-next {
+    right: 10px;
+  }
+}
+.seasonal-offers__slider .swiper-pagination {
+  position: absolute;
+  bottom: -35px !important;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.seasonal-offers__slider .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  margin: 0 !important;
+  background-color: #c7c7c7;
+  opacity: 1;
+}
+.seasonal-offers__slider .swiper-pagination-bullet-active {
+  width: 12px;
+  height: 12px;
+  background-color: #041862;
+}
+.seasonal-offers__offer-figure {
+  margin: 0 0 24px;
+  padding: 0;
+}
+@media (max-width: 576px) {
+  .seasonal-offers__offer-figure {
+    margin: 0 0 8px;
+  }
+}
+.seasonal-offers__offer-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.seasonal-offers__offer-title {
+  margin: 0;
+  color: #041862;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+@media (max-width: 576px) {
+  .seasonal-offers__offer-title {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

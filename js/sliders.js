@@ -73,3 +73,29 @@ const superPricesSwiper = new Swiper(".super-prices .swiper", {
     prevEl: ".super-prices .swiper-button-prev",
   },
 });
+
+const seasonalOffersSwiper = new Swiper(".seasonal-offers .swiper", {
+  loop: true,
+  centeredSlides: true,
+  spaceBetween: 23,
+  breakpoints: {
+    320: {
+      slidesPerView: 1.25,
+      spaceBetween: 8,
+    },
+    568: {
+      slidesPerView: 2,
+      spaceBetween: 23,
+    },
+    992: {
+      slidesPerView: 3,
+    },
+  },
+  pagination: {
+    el: ".seasonal-offers .swiper-pagination",
+  },
+  navigation: {
+    nextEl: ".seasonal-offers .swiper-button-next",
+    prevEl: ".seasonal-offers .swiper-button-prev",
+  },
+});
