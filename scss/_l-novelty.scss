@@ -1,4 +1,10 @@
 .novelty {
+  padding-top: 56px;
+
+  @include mobile {
+    padding-top: 32px;
+  }
+
   &__cards {
     position: relative;
 

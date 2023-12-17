@@ -1,3 +1,134 @@
 .news {
-  
+  padding-bottom: 120px;
+
+  @include tablet {
+    padding-bottom: 85px;
+  }
+
+  @include mobile {
+    padding-bottom: 64px;
+  }
+
+  &__title {
+    margin: 0 0 48px;
+
+    @include mobile {
+      margin: 0 0 24px;
+    }
+  }
+
+  &__subtitle {
+    margin: 0 0 32px;
+    color: $blue;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 36px;
+
+    @include tablet {
+      margin: 0 0 48px;
+    }
+
+    @include mobile {
+      margin: 0 0 16px;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+
+    @include tablet {
+      display: block;
+    }
+  }
+
+  &__images {
+    flex: 0 0 388px;
+    display: flex;
+    align-items: flex-start;
+    gap: 19px;
+    min-width: 286px;
+
+    @include laptop {
+      flex: 0 0 286px;
+    }
+
+    @include tablet {
+      padding-right: 48px;
+      padding-bottom: 48px;
+      float: left;
+    }
+
+    @include mobile {
+      justify-content: center;
+      padding: 0;
+      margin-bottom: 16px;
+      float: none;
+    }
+
+    &-main {
+      max-width: 286px;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    &-sidebar {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+
+      @include laptop {
+        display: none;
+      }
+    }
+
+    &-small {
+      width: 82px;
+      height: auto;
+      border-radius: 8px;
+    }
+  }
+
+  &__text {
+    flex: 1 1 auto;
+    max-width: 690px;
+
+    & p {
+      margin: 0 0 16px;
+      color: $blue;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+
+      @include mobile {
+        font-size: 14px;
+      }
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+
+    &-link {
+      color: $blue;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+      text-decoration: underline;
+
+      @include mobile {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
 }
