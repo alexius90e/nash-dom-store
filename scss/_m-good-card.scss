@@ -27,6 +27,7 @@
   &__title {
     height: 80px;
     margin: 0 0 8px;
+    padding: 0 8px;
     color: $blue;
     font-size: 16px;
     font-style: normal;
@@ -38,7 +39,8 @@
     display: flex;
     align-items: center;
     gap: 24px;
-    margin: 0 0 44px;
+    margin: 0 0 24px;
+    padding: 0 8px;
     color: $blue;
     font-size: 12px;
     font-style: normal;
@@ -65,28 +67,78 @@
         }
       }
     }
+  }
 
-    &-reviews {
+  &__tags {
+    min-height: 14px;
+    margin: 0 0 6px;
+    padding: 0 8px;
+
+    @include tablet {
+      min-height: 12px;
+    }
+  }
+
+  &__tag {
+    color: $red;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 14px;
+    text-transform: capitalize;
+
+    @include tablet {
+      font-size: 12px;
+      line-height: 12px;
     }
   }
 
   &__price {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
     margin: 0 0 24px;
-    color: $blue;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 24px;
+    padding: 0 8px;
 
-    & span {
-      font-size: 20px;
-      line-height: 20px;
+    &-current {
+      color: $blue;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+
+      & span {
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+
+    &-old {
+      position: relative;
+      color: $blue;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 14px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        height: 1px;
+        width: calc(100% + 10px);
+        background-color: $red;
+        transform: translateX(-50%) translateY(-50%) rotate(-8deg);
+      }
     }
   }
 
   &__controls {
     display: flex;
     justify-content: center;
+    padding: 0 8px;
 
     &-buy {
       display: inline-block;
@@ -101,6 +153,12 @@
       border: none;
       border-radius: 4px;
       background-color: $blue;
+      transition: $baseTransition;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $lightBlue;
+      }
     }
 
     &.active &-buy {

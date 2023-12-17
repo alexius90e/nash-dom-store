@@ -48,3 +48,28 @@ const noveltySwiper = new Swiper(".novelty .swiper", {
     prevEl: ".novelty .swiper-button-prev",
   },
 });
+
+const superPricesSwiper = new Swiper(".super-prices .swiper", {
+  loop: true,
+  spaceBetween: 20,
+  breakpoints: {
+    320: {
+      slidesPerView: 1.5,
+      spaceBetween: 12,
+      centeredSlides: true,
+    },
+    568: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+      
+    },
+    992: {
+      slidesPerView: 4,
+      centeredSlides: false,
+    },
+  },
+  navigation: {
+    nextEl: ".super-prices .swiper-button-next",
+    prevEl: ".super-prices .swiper-button-prev",
+  },
+});
