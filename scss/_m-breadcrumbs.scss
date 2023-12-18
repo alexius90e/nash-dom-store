@@ -1,0 +1,30 @@
+.breadcrumbs {
+  display: flex;
+  gap: 8px;
+  padding: 24px 0;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    color: $blue;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background: url(../assets/icons/arrow-1.svg) center no-repeat ;
+      background-size: 8px;
+      transform: rotate(-90deg);
+    }
+
+    &:last-child::after {
+      display: none;
+    }
+  }
+}

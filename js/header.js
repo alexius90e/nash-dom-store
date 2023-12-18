@@ -26,12 +26,41 @@ mainNavAddress.addEventListener("click", (event) => {
 const header = document.querySelector(".header");
 const headerBurgerButton = document.querySelector(".header__burger-button");
 const mainNavClose = document.querySelector(".main-nav__close");
+const headerCatalogButton = document.querySelector(".header__catalog-button");
+const headerCatalog = document.querySelector(".header__catalog");
+const headerCatalogSubitems = document.querySelector(".header__catalog-subitems");
+const headerCatalogMenuItems = document.querySelectorAll(".header__catalog-menu-item");
 
-headerBurgerButton.addEventListener("click", () => header.classList.add("active"));
 mainNavClose.addEventListener("click", () => header.classList.remove("active"));
+
+headerBurgerButton.addEventListener("click", () => {
+  header.classList.add("active");
+  headerCatalog.classList.remove("active");
+});
 
 header.addEventListener("click", (event) => {
   const isHeader = event.target.classList.contains("header");
-  const isActiveHeader = event.currentTarget.classList.contains("header");
+  const isActiveHeader = event.currentTarget.classList.contains("active");
   if (isHeader && isActiveHeader) event.currentTarget.classList.remove("active");
 });
+
+headerCatalogButton.addEventListener("click", (event) => {
+  const isActive = headerCatalog.classList.contains("active");
+  headerCatalog.classList.toggle("active");
+  if (isActive) headerCatalogSubitems.innerHTML = "";
+});
+
+headerCatalogMenuItems.forEach((item) => {
+  item.addEventListener("mouseenter", (event) => {
+    const submenu = event.currentTarget.querySelector(".header__catalog-submenu");
+    if (submenu !== null) {
+      headerCatalogSubitems.innerHTML = submenu.innerHTML;
+    } else {
+      headerCatalogSubitems.innerHTML = "";
+    }
+  });
+});
+
+headerCatalog.addEventListener('mouseleave', () => {
+  headerCatalogSubitems.innerHTML = "";
+})

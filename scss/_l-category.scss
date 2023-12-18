@@ -1,0 +1,84 @@
+.category {
+  &__title {
+    margin: 0 -40px;
+    padding: 31px 40px;
+    background-color: $grey100;
+
+    @include tablet {
+      margin: 0 -20px;
+      padding: 20px;
+    }
+
+    @include mobile {
+      margin: 0 -10px;
+      padding: 9px 10px;
+    }
+  }
+
+  &__quantity {
+    margin: 16px 0 24px;
+    color: $blue;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+
+    @include tablet {
+      margin: 20px 0 32px;
+    }
+
+    @include mobile {
+      margin: 16px 0;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    gap: 28px;
+  }
+
+  &__filter {
+    flex: 0 0 280px;
+
+    @include laptop {
+      display: none;
+    }
+  }
+
+  &__goods {
+  }
+
+  &__controls {
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 0 0 56px;
+
+    @include tablet {
+      margin: 0 0 40px;
+    }
+
+    @include mobile {
+      gap: 20px 12px;
+      margin: 0 0 32px;
+    }
+
+    & .good-card {
+      flex: 1 1 calc(100% / 3 - 40px);
+      max-width: calc(100% / 3 - 20px * 2 / 3);
+
+      @include mobile {
+        flex: 1 1 calc(100% / 2 - 18px);
+        max-width: calc(100% / 2 - 18px);
+      }
+    }
+  }
+
+  & .pagination {
+  }
+}
