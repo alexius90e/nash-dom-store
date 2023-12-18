@@ -16,6 +16,14 @@
     }
   }
 
+  & a {
+    transition: $baseTransition;
+
+    &:hover {
+      color: $lightBlue;
+    }
+  }
+
   &__title {
     margin: 0 0 24px;
     color: $blue;

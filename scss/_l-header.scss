@@ -1,4 +1,18 @@
 .header {
+  &.active {
+    &:before {
+      content: "";
+      z-index: 500;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: block;
+      background-color: rgba($color: $black, $alpha: 0.5);
+    }
+  }
+
   & .container {
     display: flex;
     flex-wrap: wrap;
@@ -37,10 +51,12 @@
     }
 
     &-address {
+      position: relative;
       flex: 1 0 auto;
       display: flex;
       align-items: center;
       gap: 4px;
+      cursor: pointer;
 
       @include laptop {
         display: none;
@@ -56,6 +72,11 @@
 
       &-text {
         color: $blue;
+        transition: $baseTransition;
+      }
+
+      &:hover &-text {
+        color: $lightBlue;
       }
 
       &-button {
@@ -64,6 +85,34 @@
         height: 16px;
         background: url(../assets/icons/arrow-1.svg) center no-repeat;
         border: none;
+        transition: $baseTransition;
+      }
+
+      &:hover &-button {
+        transform: rotate(180deg);
+      }
+
+      &-info {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 5;
+        display: none;
+        width: 280px;
+        padding: 10px 6px;
+        color: $blue;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        border-radius: 4px;
+        border: 1px solid $grey200;
+        background: $white;
+        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+      }
+
+      &:hover &-info {
+        display: inline-block;
       }
     }
 
@@ -130,7 +179,15 @@
     margin-bottom: 32px;
 
     @include laptop {
-      display: none;
+      left: -640px;
+      margin: 0;
+      transition: left ease-in-out 0.3s;
+    }
+  }
+
+  &.active .main-nav {
+    @include laptop {
+      left: 0;
     }
   }
 
