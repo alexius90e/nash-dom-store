@@ -13,17 +13,12 @@
 
   & .swiper {
     &-slide {
-      height: 320px;
       border-radius: 7px;
       background-color: $grey300;
-
-      @include mobile {
-        height: 200px;
-        border-radius: 4px;
-      } 
     }
 
-    &-button-prev, &-button-next {
+    &-button-prev,
+    &-button-next {
       height: 48px;
       width: 48px;
       background: url(../assets/icons/next-button.svg);
@@ -74,7 +69,40 @@
           background-color: $blue;
         }
       }
+    }
+  }
 
+  &__banner {
+    height: 320px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 7px;
+
+    @include laptop {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 2;
+    }
+
+    &-lg {
+      display: inline-block;
+      height: 100%;
+      width: auto;
+
+      @include laptop {
+        display: none;
+      }
+    }
+
+    &-sm {
+      display: none;
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+
+      @include laptop {
+        display: inline-block;
+      }
     }
   }
 }

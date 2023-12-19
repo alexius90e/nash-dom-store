@@ -1949,15 +1949,8 @@ ul {
   }
 }
 .banners .swiper-slide {
-  height: 320px;
   border-radius: 7px;
   background-color: #a0a6aa;
-}
-@media (max-width: 576px) {
-  .banners .swiper-slide {
-    height: 200px;
-    border-radius: 4px;
-  }
 }
 .banners .swiper-button-prev, .banners .swiper-button-next {
   height: 48px;
@@ -2006,6 +1999,40 @@ ul {
   width: 12px;
   height: 12px;
   background-color: #041862;
+}
+.banners__banner {
+  height: 320px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 7px;
+}
+@media (max-width: 992px) {
+  .banners__banner {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3/2;
+  }
+}
+.banners__banner-lg {
+  display: inline-block;
+  height: 100%;
+  width: auto;
+}
+@media (max-width: 992px) {
+  .banners__banner-lg {
+    display: none;
+  }
+}
+.banners__banner-sm {
+  display: none;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+@media (max-width: 992px) {
+  .banners__banner-sm {
+    display: inline-block;
+  }
 }
 
 .why-we__title {
