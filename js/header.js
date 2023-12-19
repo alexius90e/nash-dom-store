@@ -47,7 +47,11 @@ header.addEventListener("click", (event) => {
 headerCatalogButton.addEventListener("click", (event) => {
   const isActive = headerCatalog.classList.contains("active");
   headerCatalog.classList.toggle("active");
-  if (isActive) headerCatalogSubitems.innerHTML = "";
+  if (isActive) {
+    headerCatalogSubitems.innerHTML = "";
+    headerCatalogSubitems.classList.add("hidden");
+    headerCatalogMenuItems.forEach((item) => item.classList.remove("active"));
+  }
 });
 
 headerCatalogMenuItems.forEach((item) => {
@@ -55,12 +59,42 @@ headerCatalogMenuItems.forEach((item) => {
     const submenu = event.currentTarget.querySelector(".header__catalog-submenu");
     if (submenu !== null) {
       headerCatalogSubitems.innerHTML = submenu.innerHTML;
+      headerCatalogSubitems.classList.remove("hidden");
     } else {
       headerCatalogSubitems.innerHTML = "";
+      headerCatalogSubitems.classList.add("hidden");
+    }
+  });
+
+  item.addEventListener("click", (event) => {
+    const isItem = event.target.classList.contains("header__catalog-menu-item");
+    const subMenuTitle = event.currentTarget.querySelector(".header__catalog-submenu-title");
+    const itemName = event.currentTarget.querySelector(".header__catalog-menu-link").innerText;
+    if (subMenuTitle) subMenuTitle.innerText = itemName;
+    if (isItem) {
+      headerCatalogMenuItems.forEach((item) => item.classList.remove("active"));
+      event.currentTarget.classList.add("active");
     }
   });
 });
 
-headerCatalog.addEventListener('mouseleave', () => {
+headerCatalog.addEventListener("mouseleave", () => {
   headerCatalogSubitems.innerHTML = "";
-})
+  headerCatalogSubitems.classList.add("hidden");
+});
+
+const headerCatalogMenuCloseBtns = document.querySelectorAll(".header__catalog-menu-close");
+const headerSubmenuBackBtns = document.querySelectorAll(".header__catalog-submenu-back");
+
+headerCatalogMenuCloseBtns.forEach((closeButton) => {
+  closeButton.addEventListener("click", () => {
+    headerCatalog.classList.remove("active");
+    headerCatalogMenuItems.forEach((item) => item.classList.remove("active"));
+  });
+});
+
+headerSubmenuBackBtns.forEach((backButton) => {
+  backButton.addEventListener("click", () => {
+    headerCatalogMenuItems.forEach((item) => item.classList.remove("active"));
+  });
+});

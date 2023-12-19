@@ -364,6 +364,26 @@
           display: none;
         }
       }
+
+      &::after {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 299;
+        display: none;
+        background-color: rgba($color: #000000, $alpha: 0.25);
+      }
+    }
+
+    &.active &-button {
+      &::after {
+        @include laptop {
+          display: block;
+        }
+      }
     }
 
     &-subitems {
@@ -371,7 +391,7 @@
       top: calc(100% + 8px);
       left: 300px;
       z-index: 100;
-      display: none;
+      display: flex;
       flex-direction: column;
       flex-wrap: wrap;
       gap: 24px;
@@ -381,16 +401,24 @@
       padding: 16px;
       margin: 0;
       box-sizing: border-box;
-      overflow: auto;
+      overflow: hidden;
       list-style-type: none;
       border-radius: 0px 4px 4px 0px;
       border: 1px solid $grey200;
       background-color: $white;
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    }
 
-    &.active &-subitems {
-      display: flex;
+      @include desktop {
+        left: 100px;
+      }
+
+      @include laptop {
+        display: none;
+      }
+
+      &.hidden {
+        display: none;
+      }
     }
 
     &-menu {
@@ -414,7 +442,67 @@
       background-color: $white;
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
+      @include desktop {
+        left: -200px;
+      }
+
+      @include laptop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: auto;
+        bottom: 0;
+        z-index: 300;
+        display: block !important;
+        max-width: 480px;
+        width: 100%;
+        max-height: 100vh;
+        height: 100%;
+        padding: 0;
+        box-sizing: border-box;
+        transform: translateX(-500px);
+        transition: transform linear 0.2s;
+        will-change: transform;
+      }
+
+      &-title {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: none;
+        margin: 0;
+        padding: 26px 20px 22px;
+        color: $blue;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 36px;
+        background-color: $white;
+
+        @include laptop {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+
+      &-close {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        border: none;
+        background: url(../assets/icons/close.svg) center no-repeat;
+        background-size: 16px;
+        cursor: pointer;
+      }
+
       &-item {
+        @include laptop {
+          padding: 18px 44px 18px 36px;
+          border-bottom: 1px solid $grey300;
+          background: url(../assets/icons/arrow-right.svg) right 10px center no-repeat;
+        }
       }
 
       &-link {
@@ -432,6 +520,10 @@
 
     &.active &-menu {
       display: flex;
+
+      @include laptop {
+        transform: translateX(0);
+      }
     }
 
     &-submenu {
@@ -451,8 +543,86 @@
       background-color: $white;
       box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
+      @include laptop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: auto;
+        bottom: 0;
+        z-index: 400;
+        display: block !important;
+        max-width: 480px;
+        width: 100%;
+        max-height: 100vh;
+        height: 100%;
+        padding: 0;
+        box-sizing: border-box;
+        transform: translateX(-500px);
+        transition: transform linear 0.2s;
+        will-change: transform;
+      }
+
+      &-top {
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: none;
+        padding: 26px 20px 20px;
+        background-color: $white;
+        border-bottom: 1px solid $grey300;
+
+        @include laptop {
+          display: block;
+        }
+      }
+
+      &-controls {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      &-back {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: $blue;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+        border: none;
+        background-color: $white;
+
+        &::before {
+          content: "";
+          display: block;
+          height: 24px;
+          width: 24px;
+          background: url(../assets/icons/arrow-left.svg) center no-repeat;
+          background-size: 24px;
+        }
+      }
+
+      &-title {
+        margin: 12px 0 0;
+        color: $blue;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+        text-align: center;
+      }
+
       &-item {
         max-width: 300px;
+
+        @include laptop {
+          max-width: none;
+          padding: 18px 36px;
+          border-bottom: 1px solid $grey300;
+        }
       }
 
       &-link {
@@ -461,6 +631,12 @@
         font-style: normal;
         font-weight: 400;
         line-height: 24px;
+      }
+    }
+
+    &-menu-item.active &-submenu {
+      @include laptop {
+        transform: translateX(0);
       }
     }
   }
