@@ -329,10 +329,111 @@
           <div class="category__quantity">150 товаров</div>
 
           <div class="category__content">
-            <div class="category__filter"></div>
+            <div class="category__filter">
+              <form class="category__filter-form">
+                <h4 class="category__filter-form-title">Цена, ₽</h4>
+
+                <fieldset class="category__filter-price">
+                  <div class="double-range-slider">
+                    <div class="double-range-slider__inputs">
+                      <input
+                        class="double-range-slider__input double-range-slider__input_lower"
+                        type="range"
+                        min="0"
+                        max="100"
+                        value="0"
+                        step="1"
+                      />
+                      <input
+                        class="double-range-slider__input double-range-slider__input_upper"
+                        type="range"
+                        min="0"
+                        max="100"
+                        value="100"
+                        step="1"
+                      />
+                    </div>
+                    <div class="double-range-slider__labels">
+                      <input
+                        class="double-range-slider__label double-range-slider__label_lower"
+                        type="number"
+                        placeholder="From"
+                        min="0"
+                        max="8000"
+                        step="10"
+                        name="minPrice"
+                      />
+                      <input
+                        class="double-range-slider__label double-range-slider__label_upper"
+                        type="number"
+                        placeholder="To"
+                        min="0"
+                        max="8000"
+                        step="10"
+                        name="maxPrice"
+                      />
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset class="category__filter-checkbox category__filter-checkbox_first">
+                  <label class="category__filter-checkbox-label">
+                    <span class="category__filter-checkbox-text">Скидки</span>
+                    <input class="category__filter-checkbox-input" type="checkbox" name="discont" />
+                  </label>
+                </fieldset>
+
+                <fieldset class="category__filter-checkbox">
+                  <label class="category__filter-checkbox-label">
+                    <span class="category__filter-checkbox-text">В наличии</span>
+                    <input
+                      class="category__filter-checkbox-input"
+                      type="checkbox"
+                      name="inStock"
+                      checked
+                    />
+                  </label>
+                </fieldset>
+
+                <fieldset class="category__filter-checkbox category__filter-checkbox_last">
+                  <label class="category__filter-checkbox-label">
+                    <span class="category__filter-checkbox-text">Под заказ</span>
+                    <input class="category__filter-checkbox-input" type="checkbox" name="toOrder" />
+                  </label>
+                </fieldset>
+
+                <fieldset class="category__filter-buttons">
+                  <button class="category__filter-show-button">Показать</button>
+                  <button class="category__filter-reset-button">Сбросить все</button>
+                </fieldset>
+              </form>
+            </div>
 
             <div class="category__goods">
-              <div class="category__controls"></div>
+              <div class="category__controls">
+                <label class="category__controls-sort">
+                  <div class="category__controls-sort-title">Сортировать</div>
+                  <div class="custom-select" data-value="en">
+                    <select class="form-select" id="language" name="language">
+                      <option value="en">По популярности</option>
+                      <option value="de">По возрастанию цены</option>
+                      <option value="eu">По убыванию цены</option>
+                      <option value="fr">По новинкам</option>
+                    </select>
+                  </div>
+                </label>
+
+                <div class="category__controls-view">
+                  <button
+                    class="category__controls-view-button category__controls-view-button_tile active"
+                  ></button>
+                  <button
+                    class="category__controls-view-button category__controls-view-button_list"
+                  ></button>
+                </div>
+
+                <button class="category__controls-filter">Фильтр</button>
+              </div>
 
               <div class="category__cards">
                 <div class="good-card">
@@ -557,7 +658,24 @@
                 </div>
               </div>
 
-              <div class="pagination"></div>
+              <div class="category__buttons">
+                <button class="category__buttons-show-more">Показать больше</button>
+              </div>
+
+              <div class="pagination">
+                <button class="pagination__button pagination__button_prev"></button>
+                <div class="pagination__links">
+                  <a class="pagination__link" href="#">1</a>
+                  <a class="pagination__link" href="#">2</a>
+                  <a class="pagination__link" href="#">3</a>
+                  <a class="pagination__link active" href="#">4</a>
+                  <a class="pagination__link" href="#">5</a>
+                  <a class="pagination__link" href="#">6</a>
+                  <span class="pagination__divider">...</span>
+                  <a class="pagination__link" href="#">16</a>
+                </div>
+                <button class="pagination__button pagination__button_next"></button>
+              </div>
             </div>
           </div>
         </div>

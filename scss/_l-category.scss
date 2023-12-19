@@ -1,4 +1,14 @@
 .category {
+  padding: 0 0 72px;
+
+  @include tablet {
+    padding: 0 0 64px;
+  }
+
+  @include mobile {
+    padding: 0 0 48px;
+  }
+
   &__title {
     margin: 0 -40px;
     padding: 31px 40px;
@@ -41,16 +51,263 @@
 
   &__filter {
     flex: 0 0 280px;
+    padding-top: 64px;
 
     @include laptop {
       display: none;
     }
+
+    &-form {
+      &-title {
+        margin: 0 0 16px;
+        color: $blue;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+      }
+    }
+
+    &-price {
+      margin: 0 0 24px;
+      padding: 0;
+      border: none;
+
+      & .double-range-slider {
+        &__inputs {
+          margin: 0 0 8px;
+        }
+
+        &__labels {
+          margin: 0;
+        }
+
+        &__label {
+          color: $blue;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 16px;
+          border-radius: 4px;
+          border: 1px solid $grey300;
+          background-color: $white;
+        }
+      }
+    }
+
+    &-buttons {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      padding: 0;
+      margin: 20px 0 0;
+      border: none;
+    }
+
+    &-reset-button,
+    &-show-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 160px;
+      padding: 8px;
+      box-sizing: border-box;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 16px;
+      border: none;
+      transition: $baseTransition;
+      cursor: pointer;
+    }
+
+    &-show-button {
+      color: $white;
+      border-radius: 4px;
+      background-color: $blue;
+
+      &:hover {
+        background-color: $lightBlue;
+      }
+    }
+
+    &-reset-button {
+      color: $blue;
+      border-radius: 48px;
+      background-color: $grey100;
+
+      &:hover {
+        color: $white;
+        background-color: $grey300;
+      }
+    }
+
+    &-checkbox {
+      margin: 0;
+      padding: 24px 12px 24px 8px;
+      border: 1px solid $grey300;
+      border-top: none;
+
+      &_first {
+        border-top: 1px solid $grey300;
+        border-radius: 4px 4px 0 0;
+      }
+
+      &_last {
+        border-radius: 0 0 4px 4px;
+      }
+
+      &-label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      &-text {
+        color: $blue;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+      }
+
+      &-input {
+        display: inline-block;
+
+        &::before {
+          content: '';
+          display: block;
+          height: 16px;
+          width: 16px;
+          background: url(../assets/icons/checkbox.svg) center no-repeat;
+          background-size: 16px;
+        }
+
+        &:checked::before {
+          background: url(../assets/icons/checkbox-checked.svg) center no-repeat;
+        }
+      }
+    }
   }
 
-  &__goods {
-  }
 
   &__controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 36px;
+    gap: 24px;
+
+    &-sort {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      order: 0;
+      color: $blue;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+
+      & span {
+        @include laptop {
+          display: none;
+        }
+      }
+
+      & select {
+        padding: 4px;
+        color: $blue;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+      }
+
+      & option {
+        padding: 8px;
+      }
+    }
+
+    &-view {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      order: 1;
+
+      @include mobile {
+        order: 2;
+      }
+
+      &-button {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        border: none;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 24px;
+        cursor: pointer;
+
+        &_tile {
+          background-image: url(../assets/icons/tile.svg);
+
+          &.active {
+            background-image: url(../assets/icons/tile-active.svg);
+          }
+        }
+
+        &_list {
+          background-image: url(../assets/icons/list.svg);
+
+          &.active {
+            background-image: url(../assets/icons/list-active.svg);
+          }
+        }
+      }
+    }
+
+    &-filter {
+      display: none;
+      align-items: center;
+      gap: 16px;
+      padding: 8px 23px;
+      color: $blue;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+      border-radius: 4px;
+      border: 1px solid $grey300;
+      background-color: $white;
+      cursor: pointer;
+
+      @include mobile {
+        order: 1;
+      }
+
+      &:hover {
+        color: $lightBlue;
+        border-color: $lightBlue;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-image: url(../assets/icons/filter.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 24px;
+      }
+
+      @include laptop {
+        display: flex;
+      }
+    }
   }
 
   &__cards {
@@ -75,6 +332,44 @@
       @include mobile {
         flex: 1 1 calc(100% / 2 - 18px);
         max-width: calc(100% / 2 - 18px);
+      }
+    }
+  }
+
+  &__buttons {
+    margin: 0 0 56px;
+    text-align: center;
+
+    @include tablet {
+      margin: 0 0 40px;
+    }
+
+    &-show-more {
+      padding: 5px 28px;
+      color: $blue;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 30px;
+      text-transform: uppercase;
+      border: 4px solid $blue;
+      border-radius: 4px;
+      background-color: $white;
+      cursor: pointer;
+
+      @include tablet {
+        padding: 1px 23px;
+      }
+
+      @include mobile {
+        padding: 2px 12px;
+        font-size: 14px;
+        line-height: 20px;
+      }
+
+      &:hover {
+        color: $lightBlue;
+        border: 4px solid $lightBlue;
       }
     }
   }
