@@ -1,0 +1,51 @@
+.recently-watched {
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 -40px 32px;
+    padding: 31px 40px;
+    background-color: $grey100;
+
+    @include tablet {
+      margin: 0 -20px 48px;
+      padding: 20px;
+    }
+
+    @include mobile {
+      margin: 0 -10px 24px;
+      padding: 9px 10px;
+    }
+
+    &-link {
+      color: $blue;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+      text-decoration: underline;
+
+      @include mobile {
+        display: none;
+      }
+    }
+  }
+
+  &__cards {
+    max-width: 900px;
+    margin-left: auto;
+    margin-bottom: 80px;
+
+    @include laptop {
+      margin-left: 0;
+    }
+
+    @include tablet {
+      margin: 0 0 72px;
+    }
+
+    @include mobile {
+      margin: 0 0 112px;
+    }
+  }
+}

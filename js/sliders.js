@@ -116,3 +116,20 @@ const servicesSwiper = new Swiper(".services .swiper", {
     },
   },
 });
+
+const recentlyWatchedSwiper = new Swiper(".recently-watched .swiper", {
+  spaceBetween: 20,
+  breakpoints: {
+    320: {
+      slidesPerView: 2,
+      spaceBetween: 12,
+    },
+    568: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+    992: {
+      slidesPerView: 4,
+    },
+  },
+});
