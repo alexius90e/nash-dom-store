@@ -2013,6 +2013,11 @@ ul {
 .divider {
   padding-top: 300px;
 }
+@media (max-width: 992px) {
+  .divider {
+    padding-top: 243px;
+  }
+}
 @media (max-width: 768px) {
   .divider {
     margin-bottom: 18px;
@@ -2020,6 +2025,7 @@ ul {
 }
 @media (max-width: 576px) {
   .divider {
+    padding-top: 210px;
     margin-bottom: 24px;
   }
 }

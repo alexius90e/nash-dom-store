@@ -1,11 +1,16 @@
 .divider {
   padding-top: 300px;
 
+  @include laptop {
+    padding-top: 243px;
+  }
+
   @include tablet {
     margin-bottom: 18px;
   }
 
   @include mobile {
+    padding-top: 210px;
     margin-bottom: 24px;
   }
 
