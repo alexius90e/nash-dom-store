@@ -299,6 +299,22 @@ ul {
 .good-card__controls.active .good-card__controls-buy {
   display: none;
 }
+.good-card__controls-not-available {
+  display: inline-block;
+  max-width: 148px;
+  width: 100%;
+  padding: 8px;
+  color: #041862;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+  border-radius: 4px;
+  border: 2px solid #a0a6aa;
+  background-color: #ececec;
+  transition: all ease-in-out 0.15s;
+  cursor: pointer;
+}
 .good-card__controls-count {
   display: none;
   align-items: center;

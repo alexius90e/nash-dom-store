@@ -202,6 +202,23 @@
       display: none;
     }
 
+    &-not-available {
+      display: inline-block;
+      max-width: 148px;
+      width: 100%;
+      padding: 8px;
+      color: $blue;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 16px;
+      border-radius: 4px;
+      border: 2px solid $grey300;
+      background-color: $grey100;
+      transition: $baseTransition;
+      cursor: pointer;
+    }
+
     &-count {
       display: none;
       align-items: center;
