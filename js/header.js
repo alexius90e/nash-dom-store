@@ -98,3 +98,13 @@ headerSubmenuBackBtns.forEach((backButton) => {
     headerCatalogMenuItems.forEach((item) => item.classList.remove("active"));
   });
 });
+
+document.addEventListener("scroll", (event) => {
+  const sticky = 340;
+
+  if (window.scrollY > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+});

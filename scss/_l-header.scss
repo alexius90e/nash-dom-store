@@ -1,4 +1,12 @@
 .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: $white;
+  // transition: all linear 0.3s;
+
   &.active,
   &.catalog {
     &:before {
@@ -713,6 +721,7 @@
 
   &__link {
     flex: 0 0 82px;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -758,6 +767,94 @@
       @include mobile {
         display: none;
       }
+    }
+
+    &-count {
+      position: absolute;
+      top: 0;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 16px;
+      height: 16px;
+      padding: 2px 0;
+      box-sizing: border-box;
+      color: $white;
+      font-size: 8px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      border-radius: 20px;
+      background-color: $red;
+
+      @include tablet {
+        right: 16px;
+      }
+
+      @include mobile {
+        top: -6px;
+        right: -6px;
+        width: 12;
+        height: 12px;
+        min-width: 12px;
+      }
+    }
+  }
+
+  &.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background-color: $white;
+
+    & .container {
+      padding-top: 32px;
+      padding-bottom: 20px;
+
+      @include laptop {
+        padding-top: 16px;
+      }
+    }
+  }
+
+  &.sticky &__info {
+    display: none;
+  }
+
+  &.sticky .main-nav {
+    display: none;
+
+    @include laptop {
+      display: block;
+    }
+  }
+
+  &.sticky &__logo {
+    @include laptop {
+      display: none;
+    }
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  &.sticky &__burger {
+    @include laptop {
+      display: none;
+    }
+
+    @include mobile {
+      display: block;
+    }
+  }
+
+  &.sticky &__menu {
+    @include laptop {
+      display: none;
     }
   }
 }
