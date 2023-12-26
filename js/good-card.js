@@ -10,6 +10,8 @@ goodcards.forEach((goodcard) => {
     const isPlusButton = target.classList.contains("good-card__controls-count-plus");
     if (isBuyButton) {
       controls.classList.add("active");
+      const orderModal = document.querySelector(".modal-order");
+      if (orderModal) orderModal.classList.add("active");
     } else if (isMinusButton) {
       if (Number(counter.innerText) <= 1) {
         counter.innerText = 1;

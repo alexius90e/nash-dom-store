@@ -1,0 +1,157 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 500;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba($color: $black, $alpha: 0.55);
+  filter: blur(-10px);
+
+  &.active {
+    display: flex;
+  }
+
+  &__content {
+    position: relative;
+    background-color: $white;
+  }
+
+  &__close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    border: none;
+    background: url(../assets/icons/close.svg) center no-repeat;
+    background-size: 16px;
+    cursor: pointer;
+  }
+
+  &-order {
+    & .modal__content {
+      padding: 50px 60px 30px;
+    }
+
+    & .modal__body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+
+    &__title {
+      margin: 0;
+      color: $black;
+      text-align: center;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 36px;
+    }
+
+    &__basket-button {
+      display: inline-block;
+      padding: 10px 30px;
+      color: $white;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 16px;
+      text-transform: uppercase;
+      background-color: $red;
+      transition: $baseTransition;
+
+      &:hover {
+        transform: scale(1.03);
+      }
+
+      &:active {
+        transform: scale(0.97);
+      }
+    }
+
+    &__continue {
+      display: inline-block;
+      padding: 0;
+      color: $red;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 16px;
+      text-decoration: underline;
+      border: none;
+      background: none;
+      transition: $baseTransition;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.03);
+      }
+
+      &:active {
+        transform: scale(0.97);
+      }
+    }
+  }
+
+  &-callback-success {
+    & .modal__content {
+      margin: 0;
+      max-width: 920px;
+      width: 100%;
+      padding: 50px;
+      box-sizing: border-box;
+
+      @include laptop {
+        max-width: calc(100% - 20px);
+      }
+    }
+
+    &__title {
+      color: $blue;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 42px;
+      text-align: center;
+    }
+  }
+
+  &-callback-error {
+    & .modal__content {
+      max-width: 920px;
+      width: 100%;
+      padding: 50px;
+      box-sizing: border-box;
+
+      @include laptop {
+        max-width: calc(100% - 20px);
+      }
+    }
+
+    &__title {
+      margin: 0 0 20px;
+      color: $red;
+      font-size: 36px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 42px;
+      text-align: center;
+    }
+
+    &__error {
+      color: $red;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 32px;
+      text-align: center;
+    }
+  }
+}
