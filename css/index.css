@@ -140,6 +140,9 @@ ul {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.good-card__title a {
+  color: #041862;
+}
 @media (max-width: 768px) {
   .good-card__title {
     line-height: 20px;
