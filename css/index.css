@@ -473,8 +473,8 @@ ul {
   top: 50%;
   left: 0;
   right: 0;
-  z-index: 3;
-  height: 2px;
+  z-index: -1;
+  height: 3px;
   background-color: #041862;
   transform: translateY(-50%);
 }
@@ -489,7 +489,7 @@ ul {
   overflow: hidden;
   border: 0;
   border-radius: 1px;
-  background: linear-gradient(#a0a6aa, #a0a6aa) center no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)) center no-repeat;
   background-size: 100% 2px;
   outline: none;
   pointer-events: none;

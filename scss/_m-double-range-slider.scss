@@ -28,8 +28,8 @@
       top: 50%;
       left: 0;
       right: 0;
-      z-index: 3;
-      height: 2px;
+      z-index: -1;
+      height: 3px;
       background-color: $blue;
       transform: translateY(-50%);
     }
@@ -46,12 +46,15 @@
     overflow: hidden;
     border: 0;
     border-radius: 1px;
-    background: linear-gradient($grey300, $grey300) center no-repeat;
+    background: linear-gradient(
+        rgba($color: #000000, $alpha: 0.2),
+        rgba($color: #000000, $alpha: 0.2)
+      )
+      center no-repeat;
     background-size: 100% 2px;
     outline: none;
     pointer-events: none;
     appearance: none;
-
     &:active,
     &:focus {
       outline: none;
@@ -72,7 +75,7 @@
       pointer-events: all;
 
       &::before {
-        content: ' ';
+        content: " ";
         position: absolute;
         display: block;
         top: 13px;
@@ -82,7 +85,7 @@
       }
     }
 
-    &::-moz-range-thumb{
+    &::-moz-range-thumb {
       position: relative;
       z-index: 3;
       display: block;
@@ -97,7 +100,7 @@
       pointer-events: all;
 
       &::before {
-        content: ' ';
+        content: " ";
         position: absolute;
         display: block;
         top: 13px;
