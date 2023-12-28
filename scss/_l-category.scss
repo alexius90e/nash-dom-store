@@ -309,7 +309,7 @@
 
     &-filter {
       position: relative;
-      z-index: 50;
+      z-index: 20;
       display: none;
       align-items: center;
       gap: 16px;
@@ -388,9 +388,19 @@
       max-width: calc(100% / 3 - 20px * 2 / 3);
       box-sizing: border-box;
 
-      @include mobile {
+      @include desktop {
         flex: 1 1 calc(100% / 2 - 20px);
         max-width: calc(100% / 2 - 20px);
+      }
+
+      @include laptop {
+        flex: 1 1 calc(100% / 3 - 20px * 2 / 3);
+        max-width: calc(100% / 3 - 20px * 2 / 3);
+      }
+
+      @include mobile {
+        flex: 1 1 calc(100% / 2 - 12px / 2);
+        max-width: calc(100% / 2 - 12px / 2);
       }
     }
   }

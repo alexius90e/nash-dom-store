@@ -3241,7 +3241,7 @@ ul {
 }
 .category__controls-filter {
   position: relative;
-  z-index: 50;
+  z-index: 20;
   display: none;
   align-items: center;
   gap: 16px;
@@ -3318,10 +3318,22 @@ ul {
   max-width: calc(33.3333333333% - 13.3333333333px);
   box-sizing: border-box;
 }
-@media (max-width: 576px) {
+@media (max-width: 1200px) {
   .category__cards .good-card {
     flex: 1 1 calc(50% - 20px);
     max-width: calc(50% - 20px);
+  }
+}
+@media (max-width: 992px) {
+  .category__cards .good-card {
+    flex: 1 1 calc(33.3333333333% - 13.3333333333px);
+    max-width: calc(33.3333333333% - 13.3333333333px);
+  }
+}
+@media (max-width: 576px) {
+  .category__cards .good-card {
+    flex: 1 1 calc(50% - 6px);
+    max-width: calc(50% - 6px);
   }
 }
 .category__buttons {
