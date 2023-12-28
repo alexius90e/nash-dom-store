@@ -18,6 +18,16 @@
   }
 
   & .swiper {
+    &-slide {
+      box-sizing: border-box;
+      height: auto;
+
+      & .good-card {
+        height: 100%;
+        box-sizing: border-box;
+      }
+    }
+
     &-button-prev,
     &-button-next {
       height: 48px;

@@ -48,4 +48,16 @@
       margin: 0 0 112px;
     }
   }
+
+  & .swiper {
+    &-slide {
+      box-sizing: border-box;
+      height: auto;
+
+      & .good-card {
+        height: 100%;
+        box-sizing: border-box;
+      }
+    }
+  }
 }
