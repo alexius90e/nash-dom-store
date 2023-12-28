@@ -384,12 +384,13 @@
     }
 
     & .good-card {
-      flex: 1 1 calc(100% / 3 - 40px);
+      flex: 1 1 calc(100% / 3 - 20px * 2 / 3);
       max-width: calc(100% / 3 - 20px * 2 / 3);
+      box-sizing: border-box;
 
       @include mobile {
-        flex: 1 1 calc(100% / 2 - 18px);
-        max-width: calc(100% / 2 - 18px);
+        flex: 1 1 calc(100% / 2 - 20px);
+        max-width: calc(100% / 2 - 20px);
       }
     }
   }

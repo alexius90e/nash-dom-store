@@ -3314,13 +3314,14 @@ ul {
   }
 }
 .category__cards .good-card {
-  flex: 1 1 calc(33.3333333333% - 40px);
+  flex: 1 1 calc(33.3333333333% - 13.3333333333px);
   max-width: calc(33.3333333333% - 13.3333333333px);
+  box-sizing: border-box;
 }
 @media (max-width: 576px) {
   .category__cards .good-card {
-    flex: 1 1 calc(50% - 18px);
-    max-width: calc(50% - 18px);
+    flex: 1 1 calc(50% - 20px);
+    max-width: calc(50% - 20px);
   }
 }
 .category__buttons {
