@@ -103,9 +103,15 @@
         padding: 10px;
         box-sizing: border-box;
         color: $blue;
+        font-size: 16px;
+        line-height: normal;
         border: 1px solid $grey300;
         outline: none;
         resize: none;
+
+        @include mobile {
+          font-size: 14px;
+        }
       }
     }
 
@@ -156,10 +162,16 @@
           padding: 10px;
           box-sizing: border-box;
           color: $blue;
+          font-size: 16px;
+          line-height: normal;
           border-radius: 4px;
           border: 1px solid $grey300;
           background-color: $white;
           outline: none;
+
+          @include mobile {
+            font-size: 14px;
+          }
         }
       }
     }
@@ -181,6 +193,7 @@
     padding: 0;
     border: none;
     outline: none;
+    cursor: pointer;
 
     @include mobile {
       top: 16px;
