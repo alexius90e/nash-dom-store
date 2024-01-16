@@ -91,7 +91,9 @@
       }
 
       &_disabled {
-        background-image: url(../assets/icons/star-grey.svg);
+        &::before {
+          background-image: url(../assets/icons/star-grey.svg);
+        }
       }
     }
   }
@@ -329,6 +331,25 @@
       &:hover {
         color: $lightBlue;
       }
+    }
+  }
+
+  &__no-reviews {
+    padding-bottom: 48px;
+    color: $blue;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+
+    @include tablet {
+      padding-bottom: 32px;
+      font-size: 16px;
+    }
+
+    @include mobile {
+      padding-bottom: 24px;
+      font-size: 14px;
     }
   }
 }

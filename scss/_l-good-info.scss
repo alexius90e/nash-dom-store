@@ -7,6 +7,7 @@
 
   &__main {
     display: flex;
+    align-items: center;
     gap: 170px;
     margin: 0 -40px;
     padding: 32px 40px;
@@ -36,14 +37,10 @@
   &__gallery {
     flex: 0 1 auto;
     display: flex;
-    justify-content: flex-end;
-    flex-direction: row-reverse;
-    align-items: center;
+    justify-content: center;
     gap: 20px;
 
     @include laptop {
-      justify-content: center;
-      flex-direction: row;
       padding: 32px 0;
     }
 
@@ -53,8 +50,15 @@
 
     &-main {
       flex: 0 1 auto;
+      display: flex;
+      align-items: center;
+      order: 1;
       min-width: 0;
       max-width: 440px;
+
+      @include laptop {
+        order: 0;
+      }
 
       & .swiper {
         min-width: 0;
@@ -111,15 +115,18 @@
     }
 
     &-thumbs {
-      flex: 0 0 80px;
-      max-width: 80px;
+      flex: 0 0 auto;
+      order: 0;
       padding: 32px 52px;
+      min-height: 100%;
+      box-sizing: border-box;
 
       @include desktop {
         padding: 32px 16px;
       }
 
       @include laptop {
+        order: 1;
         padding: 0 52px;
       }
 
@@ -139,6 +146,8 @@
           display: flex;
           align-items: center;
           justify-content: center;
+          min-height: 80px;
+          width: 80px;
           border-radius: 4px;
           box-sizing: border-box;
           background-color: $white;
@@ -181,6 +190,7 @@
   }
 
   &__info {
+    flex: 0 1 312px;
     padding: 32px 0;
     color: $blue;
     font-size: 20px;
@@ -205,6 +215,10 @@
       padding: 16px 10px;
       margin: 0 -10px;
       font-size: 14px;
+    }
+
+    &-not-available {
+      display: none;
     }
 
     &-stock {
@@ -451,6 +465,49 @@
         &_disabled {
           background-image: url(../assets/icons/star-grey.svg);
         }
+      }
+    }
+  }
+
+  &_not-available &__info {
+    &-stock,
+    &-prices,
+    &-buttons,
+    &-delivery {
+      display: none;
+    }
+
+    &-not-available {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: 312px;
+      width: 100%;
+      margin: 0 0 40px;
+      padding: 10px 14px;
+      box-sizing: border-box;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 100%;
+      border-radius: 4px;
+      border: 4px solid $grey300;
+      background: $grey100;
+
+      @include laptop {
+        margin: 0 auto 40px;
+      }
+
+      @include tablet {
+        font-size: 16px;
+      }
+
+      @include mobile {
+        max-width: 232px;
+        margin-bottom: 24px;
+        padding: 7px 14px;
+        font-size: 14px;
+        border-width: 2px;
       }
     }
   }
