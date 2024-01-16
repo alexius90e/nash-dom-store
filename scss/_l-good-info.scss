@@ -64,7 +64,13 @@
         }
 
         &-slide {
+          display: flex;
+          align-items: center;
+          justify-content: center;
           height: 440px;
+          border-radius: 4px;
+          background-color: $white;
+          overflow: hidden;
 
           @include mobile {
             height: 320px;
@@ -73,9 +79,6 @@
           & img {
             max-height: 100%;
             max-width: 100%;
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
           }
         }
 
@@ -133,23 +136,25 @@
         margin: 12px 0;
 
         &-slide {
+          display: flex;
+          align-items: center;
+          justify-content: center;
           border-radius: 4px;
+          box-sizing: border-box;
+          background-color: $white;
+          box-sizing: border-box;
+          overflow: hidden;
           background-color: $white;
 
           & img {
             display: block;
-            box-sizing: border-box;
             width: 100%;
             height: 100%;
-
-            object-fit: cover;
-            transition: $baseTransition;
+            object-fit: contain;
           }
 
           &-thumb-active {
-            & img {
-              border: 3px solid $black;
-            }
+            border: 3px solid $black;
           }
         }
 

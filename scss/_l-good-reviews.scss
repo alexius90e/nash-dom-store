@@ -1,0 +1,334 @@
+.good-reviews {
+  padding: 32px 0 0;
+  background-color: $grey100;
+
+  &__title {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0 0 32px;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+
+    &-button {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 4px 10px;
+      color: $blue;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 100%;
+      border: none;
+      outline: none;
+      background-color: $white;
+      cursor: pointer;
+
+      @include mobile {
+        font-size: 14px;
+      }
+
+      &:hover {
+        color: $lightBlue;
+
+        & svg path {
+          fill: $lightBlue;
+        }
+      }
+
+      & svg {
+        width: 40px;
+        height: auto;
+
+        @include mobile {
+          width: 24px;
+        }
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin: 0 0 48px;
+    color: $blue;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+
+    @include tablet {
+      font-size: 16px;
+      margin: 0 0 24px;
+    }
+
+    @include mobile {
+      font-size: 14px;
+    }
+
+    &-rating {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background: url(../assets/icons/star-gold.svg) center no-repeat;
+        background-size: 24px;
+
+        @include mobile {
+          width: 16px;
+          height: 16px;
+          background-size: 16px;
+        }
+      }
+
+      &_disabled {
+        background-image: url(../assets/icons/star-grey.svg);
+      }
+    }
+  }
+
+  &__cards {
+    padding: 0;
+    margin: 0 -40px;
+
+    @include tablet {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &__card {
+    padding: 32px 40px;
+    border-bottom: 4px solid $white;
+
+    @include tablet {
+      padding: 12px 8px;
+      margin-bottom: 24px;
+      border: 4px solid $white;
+      border-radius: 4px;
+    }
+
+    @include mobile {
+      margin-bottom: 12px;
+      border-width: 2px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-info {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: $blue;
+      margin: 0 0 4px;
+
+      @include tablet {
+        margin: 0 0 12px;
+      }
+
+      @include mobile {
+        margin: 0 0 2px;
+      }
+
+      &-avatar {
+        display: block;
+        width: 56px;
+        height: 56px;
+        object-fit: cover;
+
+        @include tablet {
+          width: 48px;
+          height: 48px;
+        }
+
+        @include mobile {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      &-name {
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+
+        @include tablet {
+          font-size: 16px;
+        }
+
+        @include mobile {
+          font-size: 14px;
+        }
+      }
+
+      &-date {
+        display: inline-block;
+        padding-left: 32px;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+
+        @include mobile {
+          font-size: 12px;
+        }
+      }
+    }
+
+    &-rating {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-left: 72px;
+      margin-bottom: 16px;
+
+      @include mobile {
+        padding-left: 64px;
+        margin-bottom: 8px;
+      }
+
+      &-star {
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background: url(../assets/icons/star-grey.svg) center no-repeat;
+        background-size: 100%;
+
+        @include mobile {
+          width: 16px;
+          height: 16px;
+        }
+
+        &_active {
+          background-image: url(../assets/icons/star-gold.svg);
+        }
+      }
+    }
+
+    &-review {
+      &-text {
+        display: -webkit-box;
+        max-width: 896px;
+        overflow: hidden;
+        color: $blue;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+
+        @include mobile {
+          font-size: 14px;
+        }
+      }
+
+      &.active &-text {
+        -webkit-line-clamp: 100;
+      }
+
+      &-more {
+        display: flex;
+        justify-content: flex-end;
+        max-width: 896px;
+        margin: 8px 0 0;
+
+        &-btn {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          padding: 4px;
+          color: $blue;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 24px;
+          border: none;
+          background-color: rgba($color: $white, $alpha: 0);
+
+          @include mobile {
+            font-size: 14px;
+          }
+
+          &::after {
+            content: "";
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: url(../assets/icons/arrow-down.svg) center no-repeat;
+            background-size: 65%;
+            transition: $baseTransition;
+            transform: rotate(180deg);
+
+            @include mobile {
+              width: 20px;
+              height: 20px;
+            }
+          }
+
+          &-text {
+            &_closed {
+              display: inline-block;
+            }
+
+            &_opened {
+              display: none;
+            }
+          }
+        }
+      }
+
+      &.active &-more-btn {
+        &::after {
+          transform: rotate(0deg);
+        }
+
+        &-text {
+          &_closed {
+            display: none;
+          }
+
+          &_opened {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+
+  &__controls {
+    padding: 24px 0;
+    text-align: right;
+
+    &-show-all {
+      padding: 0;
+      color: $blue;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 120%;
+      text-decoration: underline;
+      border: none;
+
+      @include mobile {
+        font-size: 16px;
+      }
+
+      &:hover {
+        color: $lightBlue;
+      }
+    }
+  }
+}

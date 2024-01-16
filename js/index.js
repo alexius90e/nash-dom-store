@@ -6,3 +6,4 @@ import "./custom-select.js";
 import "./filter.js";
 import "./modal.js";
 import "./callback-form.js";
+import "./reviews.js";
