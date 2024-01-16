@@ -1,7 +1,14 @@
 .breadcrumbs {
   display: flex;
   gap: 8px;
-  padding: 24px 0;
+  margin: 16px 0;
+  padding: 8px 0;
+  overflow: auto;
+
+  @include mobile {
+    margin: 12px 0 8px;
+  }
+
 
   &__item {
     display: flex;
@@ -11,7 +18,12 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px;
+    line-height: 150%;
+    text-wrap: nowrap;
+
+    @include tablet {
+      font-size: 14px;
+    }
 
     &::after {
       content: '';

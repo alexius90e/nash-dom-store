@@ -1,0 +1,429 @@
+.good-info {
+  &__title {
+    @include tablet {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__main {
+    display: flex;
+    gap: 170px;
+    margin: 0 -40px;
+    padding: 32px 40px;
+    background-color: $grey100;
+
+    @include desktop {
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    @include laptop {
+      display: block;
+      padding: 0 40px;
+    }
+
+    @include tablet {
+      margin: 0 -20px;
+      padding: 0 20px;
+    }
+
+    @include mobile {
+      margin: 0 -10px;
+      padding: 0 10px;
+    }
+  }
+
+  &__gallery {
+    flex: 0 1 auto;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 20px;
+
+    @include laptop {
+      justify-content: center;
+      flex-direction: row;
+      padding: 32px 0;
+    }
+
+    @include mobile {
+      padding: 16px 0;
+    }
+
+    &-main {
+      flex: 0 1 auto;
+      min-width: 0;
+      max-width: 440px;
+
+      & .swiper {
+        min-width: 0;
+
+        @include mobile {
+          padding-bottom: 24px;
+        }
+
+        &-slide {
+          height: 440px;
+
+          @include mobile {
+            height: 320px;
+          }
+
+          & img {
+            max-height: 100%;
+            max-width: 100%;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+
+        &-pagination {
+          display: none;
+
+          @include mobile {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            bottom: 0 !important;
+          }
+
+          &-bullet {
+            display: block;
+            margin: 0;
+            padding: 0;
+            width: 6px;
+            height: 6px;
+
+            &-active {
+              width: 8px;
+              height: 8px;
+              background-color: $blue;
+            }
+          }
+        }
+      }
+    }
+
+    &-thumbs {
+      flex: 0 0 80px;
+      max-width: 80px;
+      padding: 32px 52px;
+
+      @include desktop {
+        padding: 32px 16px;
+      }
+
+      @include laptop {
+        padding: 0 52px;
+      }
+
+      @include tablet {
+        padding: 0;
+      }
+
+      @include mobile {
+        display: none;
+      }
+
+      & .swiper {
+        max-height: calc(440px - 72px);
+        margin: 12px 0;
+
+        &-slide {
+          border-radius: 4px;
+          background-color: $white;
+
+          & img {
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+            transition: $baseTransition;
+          }
+
+          &-thumb-active {
+            & img {
+              border: 3px solid $black;
+            }
+          }
+        }
+
+        &-button-prev,
+        &-button-next {
+          position: static;
+          height: 24px;
+          width: 100%;
+          padding: 0;
+          margin: 0;
+          background-color: aqua;
+          background: url(../assets/icons/arrow-down.svg) center no-repeat;
+
+          &::after {
+            display: none;
+          }
+        }
+
+        &-button-next {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+
+  &__info {
+    padding: 32px 0;
+    color: $blue;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+
+    @include laptop {
+      padding: 16px 40px;
+      margin: 0 -40px;
+      background-color: $white;
+    }
+
+    @include tablet {
+      padding: 16px 20px;
+      margin: 0 -20px;
+      font-size: 16px;
+      line-height: normal;
+    }
+
+    @include mobile {
+      padding: 16px 10px;
+      margin: 0 -10px;
+      font-size: 14px;
+    }
+
+    &-stock {
+      margin: 0 0 28px;
+
+      @include tablet {
+        margin: 0 0 20px;
+      }
+
+      @include mobile {
+        margin: 0 0 14px;
+      }
+    }
+
+    &-prices {
+      display: flex;
+      align-items: flex-end;
+      gap: 17px;
+      margin: 0 0 32px;
+
+      @include tablet {
+        margin-bottom: 24px;
+      }
+    }
+
+    &-price {
+      &_new {
+        color: $blue;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 125%;
+
+        @include tablet {
+          font-size: 32px;
+        }
+
+        @include mobile {
+          font-size: 24px;
+        }
+
+        & span {
+          font-size: 24px;
+          line-height: 24px;
+
+          @include mobile {
+            font-size: 16px;
+            line-height: 16px;
+          }
+        }
+      }
+
+      &_old {
+        position: relative;
+        padding-bottom: 6px;
+        color: $blue;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 100%;
+
+        @include tablet {
+          font-size: 17px;
+        }
+
+        @include mobile {
+          font-size: 14px;
+        }
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          display: block;
+          height: 1px;
+          width: calc(100% + 10px);
+          background-color: $red;
+          transform: translateX(-50%) translateY(-50%) rotate(-8deg);
+
+          @include mobile {
+            width: calc(100% + 2px);
+          }
+        }
+      }
+    }
+
+    &-buttons {
+      margin: 0 0 40px;
+
+      @include tablet {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      @include mobile {
+        margin: 0 0 24px;
+      }
+    }
+
+    &-lot {
+      margin: 0 0 24px;
+
+      @include mobile {
+        margin: 0 0 12px;
+      }
+    }
+
+    &-reviews {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin: 0 0 24px;
+      line-height: normal;
+
+      @include mobile {
+        margin: 0 0 12px;
+      }
+
+      &-rating {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          background: url(../assets/icons/star-gold.svg) center no-repeat;
+          background-size: 24px;
+
+          @include mobile {
+            width: 16px;
+            height: 16px;
+            background-size: 16px;
+          }
+        }
+
+        &_disabled {
+          background-image: url(../assets/icons/star-grey.svg);
+        }
+      }
+    }
+  }
+
+  &__properties {
+    padding: 48px 0 96px;
+
+    @include tablet {
+      padding: 80px 0;
+    }
+
+    @include mobile {
+      padding: 48px 0 56px;
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding: 0;
+      margin: 0 0 54px;
+      list-style-type: none;
+
+      @include tablet {
+        margin: 0 0 40px;
+      }
+
+      &-item {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        color: $blue;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 160%;
+
+        @include tablet {
+          font-size: 16px;
+        }
+
+        @include mobile {
+          font-size: 14px;
+        }
+
+        &-name {
+          flex: 0 1 300px;
+          display: flex;
+          gap: 4px;
+          max-width: 300px;
+          width: 100%;
+          text-wrap: nowrap;
+
+          &::after {
+            content: "";
+            flex: 1 1 auto;
+            display: block;
+            width: 100%;
+            margin: 0 0 6px;
+            border-bottom: 2px dotted $blue;
+          }
+        }
+
+        &-value {
+          text-wrap: nowrap;
+        }
+      }
+    }
+
+    &-description {
+      max-width: 896px;
+      margin: 0;
+      color: $blue;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+  }
+}

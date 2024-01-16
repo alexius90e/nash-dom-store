@@ -133,3 +133,27 @@ const recentlyWatchedSwiper = new Swiper(".recently-watched .swiper", {
     },
   },
 });
+
+
+const goodInfoSwiperThumbs = new Swiper(".good-info__gallery-thumbs .swiper", {
+  direction: 'vertical',
+  spaceBetween: 16,
+  slidesPerView: 4,
+  freeMode: true,
+  watchSlidesProgress: true,
+});
+
+
+const goodInfoSwiper = new Swiper(".good-info__gallery-main .swiper", {
+  spaceBetween: 10,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: '.swiper-pagination',
+  },
+  thumbs: {
+    swiper: goodInfoSwiperThumbs,
+  },
+});
