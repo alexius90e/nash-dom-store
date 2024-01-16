@@ -35,3 +35,24 @@ function addReviewToggler(reviewElem) {
     </button>`;
   reviewElem.append(togglerElem);
 }
+
+const addReviewButtons = document.querySelectorAll(".good-reviews__title-button");
+
+addReviewButtons.forEach((addReviewButton) => {
+  addReviewButton.addEventListener("click", () => {
+    const modalReview = document.querySelector(".modal-review");
+    if (modalReview) modalReview.classList.add("active");
+  });
+});
+
+const modalReviewTextareas = document.querySelectorAll(".modal-review__form-message-textarea");
+
+modalReviewTextareas.forEach((textarea) => {
+  textarea.addEventListener("input", (event) => {
+    const modalReviewForm = textarea.closest(".modal-review__form");
+    const modalReviewMessageCounter = modalReviewForm.querySelector(
+      ".modal-review__form-message-counter-value"
+    );
+    modalReviewMessageCounter.innerText = event.currentTarget.value.length;
+  });
+});

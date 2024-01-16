@@ -2217,5 +2217,79 @@
         </div>
       </div>
     </div>
+
+    <div class="modal modal-review close">
+      <div class="modal__content">
+        <div class="modal__body">
+          <h2 class="modal-review__title">Написать отзыв о товаре</h2>
+
+          <h2 class="modal-review__name">ЦСП 16×1250×3200мм (4кв.м)</h2>
+
+          <form class="modal-review__form">
+            <fieldset class="modal-review__form-fieldset modal-review__form-rate">
+              <label class="modal-review__form-rate-label">Оцените товар:</label>
+
+              <div class="rate">
+                <input type="radio" id="star5" name="rate" value="5" />
+                <label for="star5" title="text"></label>
+                <input type="radio" id="star4" name="rate" value="4" />
+                <label for="star4" title="text"></label>
+                <input type="radio" id="star3" name="rate" value="3" />
+                <label for="star3" title="text"></label>
+                <input type="radio" id="star2" name="rate" value="2" />
+                <label for="star2" title="text"></label>
+                <input type="radio" id="star1" name="rate" value="1" />
+                <label for="star1" title="text"></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="modal-review__form-fieldset modal-review__form-message">
+              <label class="modal-review__form-message-label" for="reviewMessage">
+                Оставьте комментарий
+              </label>
+              <div class="modal-review__form-message-counter">
+                <span class="modal-review__form-message-counter-value">0</span>
+                <span class="modal-review__form-message-counter-text">/1000</span>
+              </div>
+              <textarea
+                class="modal-review__form-message-textarea"
+                id="reviewMessage"
+                name="message"
+                minlength="0"
+                maxlength="1000"
+              ></textarea>
+            </fieldset>
+
+            <fieldset class="modal-review__form-fieldset modal-review__form-inputs">
+              <label class="modal-review__form-inputs-label">
+                <span class="modal-review__form-inputs-label-text">Ваше имя</span>
+                <input
+                  class="modal-review__form-inputs-label-input"
+                  type="text"
+                  name="name"
+                  required
+                />
+              </label>
+
+              <label class="modal-review__form-inputs-label">
+                <span class="modal-review__form-inputs-label-text">Ваш E-mail</span>
+                <input
+                  class="modal-review__form-inputs-label-input"
+                  type="email"
+                  name="email"
+                  required
+                />
+              </label>
+            </fieldset>
+
+            <fieldset class="modal-review__form-fieldset modal-review__form-controls">
+              <button class="button" >Отправить</button>
+            </fieldset>
+          </form>
+
+          <button class="modal-review__close close"></button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

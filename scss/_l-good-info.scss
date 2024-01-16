@@ -307,18 +307,11 @@
 
       &-add {
         display: inline-block;
-
-        @include mobile {
-          max-width: 232px;
-          height: 32px;
-          padding: 2px 8px;
-        }
       }
 
       &.active &-add {
         display: none;
       }
-
 
       &-count {
         display: none;

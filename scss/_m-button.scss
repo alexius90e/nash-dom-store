@@ -19,12 +19,21 @@
   }
 
   @include mobile {
-    padding: 9px 46px;
+    max-width: 232px;
+    height: 32px;
+    padding: 2px 8px;
+    border-width: 2px;
     font-size: 14px;
   }
 
   &:hover {
     border-color: $lightBlue;
     background-color: $lightBlue;
+  }
+
+  &:disabled {
+    color: $grey300;
+    border-color: $grey300;
+    background-color: $grey100;
   }
 }

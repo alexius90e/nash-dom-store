@@ -1,0 +1,38 @@
+.rate {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 8px;
+
+  &:not(:checked) > input {
+    display: none;
+  }
+  &:not(:checked) > label {
+    font-size: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    color: $grey200;
+    white-space: nowrap;
+    cursor: pointer;
+
+    &:before {
+      content: "★ ";
+      display: block;
+    }
+  }
+
+  & > input:checked ~ label {
+    color: #ffc700;
+  }
+  &:not(:checked) > label:hover,
+  &:not(:checked) > label:hover ~ label {
+    color: #ffbf00;
+  }
+  & > input:checked + label:hover,
+  & > input:checked + label:hover ~ label,
+  & > input:checked ~ label:hover,
+  & > input:checked ~ label:hover ~ label,
+  & > label:hover ~ input:checked ~ label {
+    color: #ffae00;
+  }
+}

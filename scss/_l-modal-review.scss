@@ -1,0 +1,190 @@
+.modal-review {
+  color: $blue;
+
+  & .modal__content {
+    position: relative;
+    max-width: calc(100% - 20px);
+    max-height: calc(100% - 20px);
+    width: 920px;
+    padding: 40px;
+    box-sizing: border-box;
+    overflow: auto;
+
+    @include tablet {
+      width: 680px;
+      padding: 40px 16px;
+    }
+  }
+
+  &__title,
+  &__name {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    text-align: center;
+
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+
+  &__title {
+    margin: 0 0 16px;
+
+    @include tablet {
+      margin: 0 0 12px;
+    }
+  }
+
+  &__name {
+    margin: 0 0 32px;
+
+    @include mobile {
+      margin: 0 0 20px;
+    }
+  }
+
+  &__form {
+    &-fieldset {
+      padding: 0;
+      border: none;
+    }
+
+    &-rate {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      margin: 0 0 32px;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 24px;
+
+      @include mobile {
+        margin-bottom: 24px;
+      }
+    }
+
+    &-message {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 544px;
+      margin: 0 auto 32px;
+
+      @include mobile {
+        margin-bottom: 24px;
+      }
+
+      &-label,
+      &-counter {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+
+        @include mobile {
+          font-size: 14px;
+        }
+      }
+
+      &-counter {
+        color: $grey300;
+      }
+
+      &-textarea {
+        flex: 1 1 100%;
+        display: inline-block;
+        height: 128px;
+        width: 100%;
+        margin-top: 4px;
+        padding: 10px;
+        box-sizing: border-box;
+        color: $blue;
+        border: 1px solid $grey300;
+        outline: none;
+        resize: none;
+      }
+    }
+
+    &-inputs {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin: 0 auto 40px;
+
+      @include tablet {
+        flex-direction: column;
+        max-width: 554px;
+      }
+
+      @include laptop {
+        gap: 24px;
+        margin: 0 auto 24px;
+      }
+
+      &-label {
+        flex: 0 1 auto;
+        display: flex;
+        flex-direction: column;
+        max-width: 336px;
+        width: 100%;
+
+        &-text {
+          display: flex;
+          gap: 4px;
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 150%;
+
+          @include mobile {
+            font-size: 14px;
+          }
+
+          &::after {
+            content: "*";
+            color: red;
+          }
+        }
+
+        &-input {
+          display: inline-block;
+          width: 100%;
+          padding: 10px;
+          box-sizing: border-box;
+          color: $blue;
+          border-radius: 4px;
+          border: 1px solid $grey300;
+          background-color: $white;
+          outline: none;
+        }
+      }
+    }
+
+    &-controls {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: url(../assets/icons/close.svg) center no-repeat;
+    padding: 0;
+    border: none;
+    outline: none;
+
+    @include mobile {
+      top: 16px;
+      right: 16px;
+    }
+  }
+}

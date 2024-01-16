@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap");
 html {
   color: #0a0a0a;
@@ -125,13 +126,21 @@ ul {
 }
 @media (max-width: 576px) {
   .button {
-    padding: 9px 46px;
+    max-width: 232px;
+    height: 32px;
+    padding: 2px 8px;
+    border-width: 2px;
     font-size: 14px;
   }
 }
 .button:hover {
   border-color: #0535DF;
   background-color: #0535DF;
+}
+.button:disabled {
+  color: #a0a6aa;
+  border-color: #a0a6aa;
+  background-color: #ececec;
 }
 
 .good-card {
@@ -731,6 +740,37 @@ ul {
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.rate {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  gap: 8px;
+}
+.rate:not(:checked) > input {
+  display: none;
+}
+.rate:not(:checked) > label {
+  font-size: 24px;
+  line-height: 24px;
+  overflow: hidden;
+  color: #c7c7c7;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.rate:not(:checked) > label:before {
+  content: "★ ";
+  display: block;
+}
+.rate > input:checked ~ label {
+  color: #ffc700;
+}
+.rate:not(:checked) > label:hover, .rate:not(:checked) > label:hover ~ label {
+  color: #ffbf00;
+}
+.rate > input:checked + label:hover, .rate > input:checked + label:hover ~ label, .rate > input:checked ~ label:hover, .rate > input:checked ~ label:hover ~ label, .rate > label:hover ~ input:checked ~ label {
+  color: #ffae00;
 }
 
 .header {
@@ -3772,6 +3812,187 @@ ul {
   text-align: center;
 }
 
+.modal-review {
+  color: #041862;
+}
+.modal-review .modal__content {
+  position: relative;
+  max-width: calc(100% - 20px);
+  max-height: calc(100% - 20px);
+  width: 920px;
+  padding: 40px;
+  box-sizing: border-box;
+  overflow: auto;
+}
+@media (max-width: 768px) {
+  .modal-review .modal__content {
+    width: 680px;
+    padding: 40px 16px;
+  }
+}
+.modal-review__title, .modal-review__name {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  text-align: center;
+}
+@media (max-width: 576px) {
+  .modal-review__title, .modal-review__name {
+    font-size: 16px;
+  }
+}
+.modal-review__title {
+  margin: 0 0 16px;
+}
+@media (max-width: 768px) {
+  .modal-review__title {
+    margin: 0 0 12px;
+  }
+}
+.modal-review__name {
+  margin: 0 0 32px;
+}
+@media (max-width: 576px) {
+  .modal-review__name {
+    margin: 0 0 20px;
+  }
+}
+.modal-review__form-fieldset {
+  padding: 0;
+  border: none;
+}
+.modal-review__form-rate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin: 0 0 32px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+@media (max-width: 576px) {
+  .modal-review__form-rate {
+    margin-bottom: 24px;
+  }
+}
+.modal-review__form-message {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 544px;
+  margin: 0 auto 32px;
+}
+@media (max-width: 576px) {
+  .modal-review__form-message {
+    margin-bottom: 24px;
+  }
+}
+.modal-review__form-message-label, .modal-review__form-message-counter {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+}
+@media (max-width: 576px) {
+  .modal-review__form-message-label, .modal-review__form-message-counter {
+    font-size: 14px;
+  }
+}
+.modal-review__form-message-counter {
+  color: #a0a6aa;
+}
+.modal-review__form-message-textarea {
+  flex: 1 1 100%;
+  display: inline-block;
+  height: 128px;
+  width: 100%;
+  margin-top: 4px;
+  padding: 10px;
+  box-sizing: border-box;
+  color: #041862;
+  border: 1px solid #a0a6aa;
+  outline: none;
+  resize: none;
+}
+.modal-review__form-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin: 0 auto 40px;
+}
+@media (max-width: 768px) {
+  .modal-review__form-inputs {
+    flex-direction: column;
+    max-width: 554px;
+  }
+}
+@media (max-width: 992px) {
+  .modal-review__form-inputs {
+    gap: 24px;
+    margin: 0 auto 24px;
+  }
+}
+.modal-review__form-inputs-label {
+  flex: 0 1 auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 336px;
+  width: 100%;
+}
+.modal-review__form-inputs-label-text {
+  display: flex;
+  gap: 4px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+}
+@media (max-width: 576px) {
+  .modal-review__form-inputs-label-text {
+    font-size: 14px;
+  }
+}
+.modal-review__form-inputs-label-text::after {
+  content: "*";
+  color: red;
+}
+.modal-review__form-inputs-label-input {
+  display: inline-block;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  color: #041862;
+  border-radius: 4px;
+  border: 1px solid #a0a6aa;
+  background-color: #ffffff;
+  outline: none;
+}
+.modal-review__form-controls {
+  display: flex;
+  justify-content: center;
+}
+.modal-review__close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  display: block;
+  width: 24px;
+  height: 24px;
+  background: url(../assets/icons/close.svg) center no-repeat;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+@media (max-width: 576px) {
+  .modal-review__close {
+    top: 16px;
+    right: 16px;
+  }
+}
+
 @media (max-width: 768px) {
   .good-info__title {
     margin-bottom: 24px;
@@ -4080,13 +4301,6 @@ ul {
 }
 .good-info__info-buttons-add {
   display: inline-block;
-}
-@media (max-width: 576px) {
-  .good-info__info-buttons-add {
-    max-width: 232px;
-    height: 32px;
-    padding: 2px 8px;
-  }
 }
 .good-info__info-buttons.active .good-info__info-buttons-add {
   display: none;
