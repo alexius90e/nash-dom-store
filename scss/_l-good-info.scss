@@ -304,6 +304,116 @@
       @include mobile {
         margin: 0 0 24px;
       }
+
+      &-add {
+        display: inline-block;
+
+        @include mobile {
+          max-width: 232px;
+          height: 32px;
+          padding: 2px 8px;
+        }
+      }
+
+      &.active &-add {
+        display: none;
+      }
+
+
+      &-count {
+        display: none;
+        align-items: center;
+
+        & > * {
+          display: inline-block;
+          min-height: 48px;
+          box-sizing: border-box;
+          user-select: none;
+
+          @include mobile {
+            min-height: 32px;
+          }
+        }
+
+        &-link {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 8px;
+          padding: 4px 18px;
+          border: 2px solid $blue;
+          border-radius: 4px;
+          box-sizing: border-box;
+          color: $blue;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 100%;
+          background-color: $white;
+
+          @include mobile {
+            font-size: 14px;
+          }
+
+          &:hover {
+            color: $lightBlue;
+            border-color: $lightBlue;
+          }
+        }
+
+        &-minus,
+        &-plus {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0;
+          margin: 0;
+          box-sizing: border-box;
+          aspect-ratio: 1;
+          color: $blue;
+          font-size: 40px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 28px;
+          border: 2px solid $blue;
+          border-radius: 6px;
+          background-color: $white;
+          cursor: pointer;
+
+          @include mobile {
+            font-size: 24px;
+          }
+
+          &:hover {
+            color: $lightBlue;
+            border-color: $lightBlue;
+          }
+        }
+
+        &-quantity {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 72px;
+          padding: 0 8px;
+          box-sizing: border-box;
+          color: $blue;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 100%;
+          background-color: $white;
+
+          @include mobile {
+            min-width: 52px;
+            font-size: 14px;
+          }
+        }
+      }
+
+      &.active &-count {
+        display: flex;
+      }
     }
 
     &-lot {

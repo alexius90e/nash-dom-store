@@ -4078,6 +4078,111 @@ ul {
     margin: 0 0 24px;
   }
 }
+.good-info__info-buttons-add {
+  display: inline-block;
+}
+@media (max-width: 576px) {
+  .good-info__info-buttons-add {
+    max-width: 232px;
+    height: 32px;
+    padding: 2px 8px;
+  }
+}
+.good-info__info-buttons.active .good-info__info-buttons-add {
+  display: none;
+}
+.good-info__info-buttons-count {
+  display: none;
+  align-items: center;
+}
+.good-info__info-buttons-count > * {
+  display: inline-block;
+  min-height: 48px;
+  box-sizing: border-box;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+}
+@media (max-width: 576px) {
+  .good-info__info-buttons-count > * {
+    min-height: 32px;
+  }
+}
+.good-info__info-buttons-count-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  padding: 4px 18px;
+  border: 2px solid #041862;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #041862;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  background-color: #ffffff;
+}
+@media (max-width: 576px) {
+  .good-info__info-buttons-count-link {
+    font-size: 14px;
+  }
+}
+.good-info__info-buttons-count-link:hover {
+  color: #0535DF;
+  border-color: #0535DF;
+}
+.good-info__info-buttons-count-minus, .good-info__info-buttons-count-plus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  aspect-ratio: 1;
+  color: #041862;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+  border: 2px solid #041862;
+  border-radius: 6px;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+@media (max-width: 576px) {
+  .good-info__info-buttons-count-minus, .good-info__info-buttons-count-plus {
+    font-size: 24px;
+  }
+}
+.good-info__info-buttons-count-minus:hover, .good-info__info-buttons-count-plus:hover {
+  color: #0535DF;
+  border-color: #0535DF;
+}
+.good-info__info-buttons-count-quantity {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 72px;
+  padding: 0 8px;
+  box-sizing: border-box;
+  color: #041862;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  background-color: #ffffff;
+}
+@media (max-width: 576px) {
+  .good-info__info-buttons-count-quantity {
+    min-width: 52px;
+    font-size: 14px;
+  }
+}
+.good-info__info-buttons.active .good-info__info-buttons-count {
+  display: flex;
+}
 .good-info__info-lot {
   margin: 0 0 24px;
 }
