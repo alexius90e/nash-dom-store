@@ -4194,7 +4194,7 @@ ul {
   transform: rotate(180deg);
 }
 .good-info__info {
-  flex: 0 1 312px;
+  flex: 1 1 auto;
   padding: 32px 0;
   color: #041862;
   font-size: 20px;
@@ -4922,5 +4922,129 @@ ul {
   .good-reviews__no-reviews {
     padding-bottom: 24px;
     font-size: 14px;
+  }
+}
+
+.basket__title {
+  display: flex;
+  align-items: flex-end;
+  gap: 48px;
+}
+@media (max-width: 576px) {
+  .basket__title {
+    gap: 32px;
+  }
+}
+.basket__title-goods {
+  padding-bottom: 2px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+}
+@media (max-width: 768px) {
+  .basket__title-goods {
+    font-size: 16px;
+  }
+}
+@media (max-width: 576px) {
+  .basket__title-goods {
+    font-size: 14px;
+  }
+}
+.basket__main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 32px;
+  margin: 0 -40px;
+  padding: 32px 40px;
+  background-color: #ececec;
+}
+@media (max-width: 992px) {
+  .basket__main {
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .basket__main {
+    gap: 24px;
+    margin: 0 -20px;
+    padding: 24px 0;
+  }
+}
+@media (max-width: 576px) {
+  .basket__main {
+    gap: 16px;
+    margin: 0 -10px;
+    padding: 16px 0;
+  }
+}
+.basket__cards {
+  flex: 0 1 66%;
+  order: 0;
+  height: 558px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+@media (max-width: 992px) {
+  .basket__cards {
+    flex: 0 1 auto;
+  }
+}
+@media (max-width: 768px) {
+  .basket__cards {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 576px) {
+  .basket__cards {
+    padding: 0 10px;
+  }
+}
+.basket__checkout {
+  flex: 0 1 30%;
+  order: 1;
+  max-width: 340px;
+  height: 452px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+@media (max-width: 992px) {
+  .basket__checkout {
+    flex: 0 1 auto;
+    order: 2;
+    max-width: none;
+  }
+}
+@media (max-width: 768px) {
+  .basket__checkout {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 576px) {
+  .basket__checkout {
+    padding: 0 10px;
+  }
+}
+.basket__buttons {
+  flex: 1 1 100%;
+  order: 2;
+}
+@media (max-width: 992px) {
+  .basket__buttons {
+    flex: 0 1 auto;
+    order: 1;
+    padding: 0 40px;
+  }
+}
+@media (max-width: 768px) {
+  .basket__buttons {
+    padding: 0 20px;
+  }
+}
+@media (max-width: 576px) {
+  .basket__buttons {
+    padding: 0 10px;
   }
 }
