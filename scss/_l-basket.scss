@@ -57,7 +57,6 @@
   &__cards {
     flex: 1 1 60%;
     order: 0;
-    height: 558px;
     box-sizing: border-box;
     background-color: $white;
 
@@ -66,11 +65,7 @@
     }
 
     @include tablet {
-      padding: 0 20px;
-    }
-
-    @include mobile {
-      padding: 0 10px;
+      padding: 0;
     }
   }
 
@@ -214,7 +209,7 @@
       @include tablet {
         font-size: 16px;
       }
-  
+
       @include mobile {
         font-size: 14px;
       }

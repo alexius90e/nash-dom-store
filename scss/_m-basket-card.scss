@@ -1,0 +1,221 @@
+.basket-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 32px 16px 68px;
+  color: $blue;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  border-bottom: 2px solid $grey300;
+  background: $white;
+
+  @include tablet {
+    padding: 24px;
+    flex-wrap: wrap;
+  }
+
+  @include mobile {
+    padding: 16px 10px 64px;
+  }
+
+  &__figure {
+    flex: 0 0 auto;
+    height: 96px;
+    width: 96px;
+    overflow: hidden;
+    border-radius: 4px;
+    border: 1px solid $grey300;
+    background: $white;
+
+    &-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 256px;
+
+    @include tablet {
+      flex: 1 1 calc(100% - 120px);
+    }
+
+    @include mobile {
+      gap: 12px;
+    }
+
+    &-name {
+      font-weight: 500;
+    }
+  }
+
+  &__prices {
+    position: relative;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 32px;
+    min-height: 72px;
+    padding-bottom: 16px;
+    box-sizing: border-box;
+
+    @include tablet {
+      flex: 1 1 100%;
+      max-width: calc(100% - 156px);
+      margin-left: 200px;
+    }
+
+    @include mobile {
+      justify-content: space-between;
+      max-width: none;
+      margin-left: 0;
+    }
+
+    &-counter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 34px;
+      max-width: 148px;
+      width: 100%;
+
+      &-minus,
+      &-plus {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 32px;
+        width: 32px;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        color: $blue;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 28px;
+        border: 2px solid $blue;
+        border-radius: 6px;
+        background-color: $white;
+        cursor: pointer;
+      }
+
+      &-quantity {
+        color: $blue;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 32px;
+      }
+    }
+
+    &-total {
+      flex: 0 1 180px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+
+      @include tablet {
+        flex: 0 1 230px;
+      }
+
+      &-price {
+        &_new {
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 120%;
+        }
+
+        &_old {
+          position: relative;
+          max-width: fit-content;
+
+          @include mobile {
+            font-size: 14px;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: block;
+            height: 1px;
+            width: calc(100% + 10px);
+            background-color: $red;
+            transform: translateX(-50%) translateY(-50%) rotate(-8deg);
+
+            @include mobile {
+              width: calc(100% + 2px);
+            }
+          }
+        }
+      }
+    }
+
+    &-price {
+      &-new {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+
+      &-old {
+        display: none;
+      }
+    }
+  }
+
+  &__button-delete {
+    position: absolute;
+    bottom: 16px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 0;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    border: none;
+    background: none;
+
+    @include tablet {
+      bottom: 21px;
+      right: auto;
+      left: 24px;
+    }
+
+    @include mobile {
+      bottom: 16px;
+      left: 10px;
+      padding: 1px;
+      border: 2px solid $grey300;
+      border-radius: 4px;
+    }
+
+    & span {
+      @include mobile {
+        display: none;
+      }
+    }
+
+    & svg {
+      max-width: 32px;
+    }
+  }
+}
