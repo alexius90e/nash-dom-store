@@ -33,6 +33,8 @@ basketCards.forEach((basketCard) => {
 });
 
 function updatePrices() {
+  const basketMain = document.querySelector(".basket__main");
+  const basketDisclaimer = document.querySelector(".basket__disclaimer");
   const basketCards = [...document.querySelectorAll(".basket-card")];
   const basketTitieTotalQuantityElem = document.querySelector(".basket__title-goods-count");
   const basketTotalQuantityElem = document.querySelector(".basket__checkout-item-data-quantity");
@@ -84,6 +86,11 @@ function updatePrices() {
   basketTotalPriceFullElem.innerText = totalPriceFull;
   basketTotalDiscountElem.innerText = totalDiscount;
   basketTotalPriceResultElem.innerText = totalPriceResult;
+
+  if (totalQuantity < 1) {
+    basketMain.classList.add("hidden");
+    basketDisclaimer.classList.remove("hidden");
+  }
 }
 
 updatePrices();
