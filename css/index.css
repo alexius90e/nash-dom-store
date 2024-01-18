@@ -5128,3 +5128,43 @@ ul {
     padding: 0 10px;
   }
 }
+.basket__buttons-clear-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px 0 0;
+  color: #041862;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  transition: all ease-in-out 0.15s;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .basket__buttons-clear-button {
+    font-size: 16px;
+  }
+}
+@media (max-width: 576px) {
+  .basket__buttons-clear-button {
+    font-size: 14px;
+  }
+}
+.basket__buttons-clear-button:hover {
+  color: #0535DF;
+}
+.basket__buttons-clear-button svg {
+  display: inline-block;
+  max-width: 32px;
+  height: auto;
+}
+.basket__buttons-clear-button svg path {
+  fill: #041862;
+  transition: all ease-in-out 0.15s;
+}
+.basket__buttons-clear-button:hover svg path {
+  fill: #0535DF;
+}
