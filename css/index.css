@@ -5490,3 +5490,65 @@ ul {
 .basket__buttons-clear-button:hover svg path {
   fill: #0535DF;
 }
+
+.section-with-banner {
+  margin: 0 0 72px;
+}
+@media (max-width: 576px) {
+  .section-with-banner {
+    margin: 0 0 56px;
+  }
+}
+.section-with-banner__title {
+  margin: 0 -40px 32px;
+  padding: 32px 40px;
+  background-color: #ececec;
+}
+@media (max-width: 768px) {
+  .section-with-banner__title {
+    margin: 0 -20px 32px;
+    padding: 20px;
+  }
+}
+@media (max-width: 576px) {
+  .section-with-banner__title {
+    padding: 10px;
+    margin: 0 -10px 32px;
+  }
+}
+.section-with-banner__wrapper {
+  display: flex;
+  gap: 20px;
+}
+@media (max-width: 992px) {
+  .section-with-banner__wrapper {
+    display: block;
+  }
+}
+.section-with-banner__sidebar {
+  flex: 0 0 285px;
+  height: 100px;
+  background-color: #c7c7c7;
+}
+@media (max-width: 992px) {
+  .section-with-banner__sidebar {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 768px) {
+  .section-with-banner__sidebar {
+    height: 104px;
+    margin: 0 -20px 20px;
+  }
+}
+@media (max-width: 576px) {
+  .section-with-banner__sidebar {
+    height: 60px;
+    margin: 0 -10px 20px;
+  }
+}
+.section-with-banner__content {
+  flex: 1 1 auto;
+  height: 100px;
+  background-color: darkorange;
+}

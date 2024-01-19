@@ -1,3 +1,5 @@
+const basketMain = document.querySelector(".basket__main");
+
 const basketCards = document.querySelectorAll(".basket-card");
 
 const basketClearButtons = document.querySelectorAll(".basket__buttons-clear-button");
@@ -93,4 +95,4 @@ function updatePrices() {
   }
 }
 
-updatePrices();
+if (basketMain) updatePrices();

@@ -1,0 +1,58 @@
+.section-with-banner {
+  margin:  0 0 72px;
+
+  @include mobile {
+    margin: 0 0 56px;
+  }
+
+  &__title {
+    margin: 0 -40px 32px;
+    padding: 32px 40px;
+    background-color: $grey100;
+
+    @include tablet {
+      margin: 0 -20px 32px;
+      padding: 20px;
+    }
+
+    @include mobile {
+      padding: 10px;
+      margin: 0 -10px 32px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    gap: 20px;
+
+    @include laptop {
+      display: block;
+    }
+  }
+
+  &__sidebar {
+    flex: 0 0 285px;
+    height: 100px;
+    background-color: $grey200;
+
+    @include laptop {
+      margin-bottom: 20px;
+    }
+
+    @include tablet {
+      height: 104px;
+      margin: 0 -20px 20px;
+    }
+
+    @include mobile {
+      height: 60px;
+      margin: 0 -10px 20px;
+    }
+  }
+
+  &__content {
+    flex: 1 1 auto;
+    height: 100px;
+    background-color: darkorange;
+  }
+}
