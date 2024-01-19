@@ -9,6 +9,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: 100%;
+  box-sizing: border-box;
   border: 4px solid $blue;
   border-radius: 4px;
   background-color: $blue;
@@ -35,5 +36,15 @@
     color: $grey300;
     border-color: $grey300;
     background-color: $grey100;
+  }
+
+  &_light {
+    color: $blue;
+    background-color: $white;
+
+    &:hover {
+      color: $lightBlue;
+      background-color: $white;
+    }
   }
 }

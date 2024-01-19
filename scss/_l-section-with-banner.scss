@@ -1,5 +1,5 @@
 .section-with-banner {
-  margin:  0 0 72px;
+  margin: 0 0 72px;
 
   @include mobile {
     margin: 0 0 56px;
@@ -32,27 +32,68 @@
 
   &__sidebar {
     flex: 0 0 285px;
-    height: 100px;
-    background-color: $grey200;
 
     @include laptop {
       margin-bottom: 20px;
     }
 
     @include tablet {
-      height: 104px;
       margin: 0 -20px 20px;
     }
 
     @include mobile {
-      height: 60px;
       margin: 0 -10px 20px;
+    }
+  }
+
+  &__banners {
+    text-align: center;
+
+    & img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &__banner {
+    &-lg {
+      display: inline-block;
+
+      @include laptop {
+        display: none;
+      }
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &-md {
+      display: none;
+
+      @include laptop {
+        display: inline-block;
+      }
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &-sm {
+      display: none;
+
+      @include laptop {
+        display: none;
+      }
+
+      @include mobile {
+        display: inline-block;
+      }
     }
   }
 
   &__content {
     flex: 1 1 auto;
-    height: 100px;
-    background-color: darkorange;
   }
 }
