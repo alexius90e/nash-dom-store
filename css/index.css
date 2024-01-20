@@ -22,7 +22,11 @@ textarea {
 }
 
 a {
+  color: #041862;
   text-decoration: none;
+}
+a:hover {
+  color: #0535DF;
 }
 
 figure {
@@ -5804,4 +5808,107 @@ ul {
 }
 .article a:hover {
   color: #0535DF;
+}
+
+.news-page__card {
+  margin: 0 0 24px;
+  padding: 20px 24px;
+  color: #041862;
+  border: 1px solid #a0a6aa;
+  background-color: #ffffff;
+}
+@media (max-width: 576px) {
+  .news-page__card {
+    border: none;
+    border-top: 1px solid #a0a6aa;
+    padding: 16px 4px;
+  }
+}
+.news-page__card-date {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 8px;
+  margin: 0 0 24px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+  border-radius: 20px;
+  background-color: #ececec;
+}
+@media (max-width: 576px) {
+  .news-page__card-date {
+    margin-bottom: 16px;
+    font-size: 14px;
+  }
+}
+.news-page__card-title {
+  margin: 0 0 16px;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+}
+@media (max-width: 576px) {
+  .news-page__card-title {
+    margin-bottom: 12px;
+    font-size: 16px;
+  }
+}
+.news-page__card-content {
+  min-height: 160px;
+}
+.news-page__card-image {
+  padding-right: 24px;
+  padding-bottom: 24px;
+  float: left;
+}
+@media (max-width: 576px) {
+  .news-page__card-image {
+    padding: 0;
+    margin: 0 0 8px;
+    text-align: center;
+    float: none;
+  }
+}
+.news-page__card-image img {
+  display: inline-block;
+  height: 160px;
+  width: 160px;
+  object-fit: cover;
+}
+.news-page__card-text {
+  margin: 0 0 14px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+@media (max-width: 768px) {
+  .news-page__card-text {
+    -webkit-line-clamp: 7;
+  }
+}
+@media (max-width: 576px) {
+  .news-page__card-text {
+    -webkit-line-clamp: 6;
+  }
+}
+.news-page__card-text:last-child {
+  margin: 0;
+}
+.news-page__more {
+  display: flex;
+  justify-content: center;
+  margin: 0 0 56px;
+}
+@media (max-width: 768px) {
+  .news-page__more {
+    margin: 0 0 40px;
+  }
+}
+.news-page__more .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,0 +1,108 @@
+.news-page {
+  &__cards {
+  }
+
+  &__card {
+    margin: 0 0 24px;
+    padding: 20px 24px;
+    color: $blue;
+    border: 1px solid $grey300;
+    background-color: $white;
+
+    @include mobile {
+      border: none;
+      border-top: 1px solid $grey300;
+      padding: 16px 4px;
+    }
+
+    &-date {
+      width: fit-content;
+      padding: 8px;
+      margin: 0 0 24px;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      border-radius: 20px;
+      background-color: $grey100;
+
+      @include mobile {
+        margin-bottom: 16px;
+        font-size: 14px;
+      }
+    }
+
+    &-title {
+      margin: 0 0 16px;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%;
+
+      @include mobile {
+        margin-bottom: 12px;
+        font-size: 16px;
+      }
+    }
+
+    &-content {
+      min-height: 160px;
+    }
+
+    &-image {
+      padding-right: 24px;
+      padding-bottom: 24px;
+      float: left;
+
+      @include mobile {
+        padding: 0;
+        margin: 0 0 8px;
+        text-align: center;
+        float: none;
+      }
+
+      & img {
+        display: inline-block;
+        height: 160px;
+        width: 160px;
+        object-fit: cover;
+      }
+    }
+
+    &-text {
+      margin: 0 0 14px;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 24px;
+      
+      @include tablet {
+        -webkit-line-clamp: 7;
+      }
+
+      @include mobile {
+        -webkit-line-clamp: 6;
+      }
+
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+
+  &__more {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 56px;
+
+    @include tablet {
+      margin: 0 0 40px;
+    }
+
+    & .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}

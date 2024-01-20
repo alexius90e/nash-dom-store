@@ -22,7 +22,12 @@ textarea {
 }
 
 a {
+  color: $blue;
   text-decoration: none;
+
+  &:hover {
+    color: $lightBlue;
+  }
 }
 
 figure {
@@ -68,7 +73,6 @@ ul {
     line-height: 30px;
   }
 }
-
 
 .section {
   padding: 60px 0;
