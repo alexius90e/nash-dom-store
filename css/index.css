@@ -5730,6 +5730,8 @@ ul {
 }
 
 .article {
+  max-width: 808px;
+  margin: 0 auto;
   color: #041862;
 }
 .article__back {
