@@ -1052,7 +1052,7 @@ ul {
   flex-wrap: wrap;
   align-items: center;
   gap: 0 20px;
-  padding-bottom: 44px;
+  padding-bottom: 40px;
 }
 @media (max-width: 992px) {
   .header .container {
@@ -1062,12 +1062,12 @@ ul {
 }
 @media (max-width: 768px) {
   .header .container {
-    gap: 20px 16px;
+    gap: 12px 16px;
   }
 }
 @media (max-width: 576px) {
   .header .container {
-    gap: 20px 12px;
+    gap: 14px 12px;
     padding-top: 24px;
     padding-bottom: 24px;
   }
@@ -1076,7 +1076,7 @@ ul {
   flex: 1 1 100%;
   display: flex;
   gap: 48px;
-  padding: 32px 0;
+  padding: 26px 0 24px;
 }
 @media (max-width: 992px) {
   .header__info {
@@ -1199,7 +1199,7 @@ ul {
 }
 .header .main-nav {
   flex: 1 1 100%;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 }
 @media (max-width: 992px) {
   .header .main-nav {
@@ -2293,7 +2293,7 @@ ul {
 }
 .main-nav__menu-link {
   display: inline-block;
-  padding: 20px 0;
+  padding: 9px 0;
   color: #041862;
   font-size: 14px;
   font-style: normal;
@@ -2381,7 +2381,7 @@ ul {
 }
 
 .divider {
-  padding-top: 300px;
+  padding-top: 230px;
 }
 @media (max-width: 992px) {
   .divider {
@@ -2390,12 +2390,13 @@ ul {
 }
 @media (max-width: 768px) {
   .divider {
+    padding-top: 226px;
     margin-bottom: 18px;
   }
 }
 @media (max-width: 576px) {
   .divider {
-    padding-top: 210px;
+    padding-top: 198px;
     margin-bottom: 24px;
   }
 }
