@@ -1594,6 +1594,214 @@
             <div class="order__stages-steps">Шаг 1 из 4</div>
             <div class="order__stages-name">Персональные данные</div>
           </div>
+
+          <div class="order__content">
+            <div class="order__personal">
+              <div class="order__info">
+                <h4 class="order__info-title">Ваш заказ</h4>
+
+                <div class="order__info-item">
+                  <span>Товары</span>
+                  <span>4 шт.</span>
+                </div>
+
+                <div class="order__info-item">
+                  <span>Общий вес</span>
+                  <span>10 кг</span>
+                </div>
+
+                <div class="order__info-item order__info-item_total">
+                  <span>Стоимость</span>
+                  <span>7370 ₽</span>
+                </div>
+              </div>
+
+              <div class="order__main">
+                <div class="order__personal-title order__main-title">Физическое лицо</div>
+
+                <label class="order__personal-name order__label">
+                  <span>Имя</span>
+                  <input
+                    class="order__input"
+                    type="text"
+                    name="orderName"
+                    id="orderName"
+                    required
+                  />
+                </label>
+
+                <label class="order__personal-surname order__label">
+                  <span>Фамилия</span>
+                  <input
+                    class="order__input"
+                    type="text"
+                    name="orderSurname"
+                    id="orderSurname"
+                    required
+                  />
+                </label>
+
+                <label class="order__personal-phone order__label">
+                  <span>Телефон</span>
+                  <input
+                    class="order__input"
+                    type="tel"
+                    name="orderPhone"
+                    id="orderPhone"
+                    placeholder="+7"
+                    required
+                  />
+                </label>
+
+                <label class="order__personal-email order__label">
+                  <span>E-mail</span>
+                  <input class="order__input" type="email" name="orderEmail" id="orderEmail" />
+                </label>
+
+                <label class="order__personal-bonus order__label">
+                  <span>Бонусная карта</span>
+                  <input
+                    class="order__input"
+                    type="text"
+                    name="orderBonus"
+                    id="orderBonus"
+                    placeholder="Введите номер бонусной карты"
+                  />
+                </label>
+
+                <p class="order__personal-description">
+                  Полные реквизиты организации для выставления счета просьба высылать на почту
+                  <a href="mailto:buh@nashdom41.ru">buh@nashdom41.ru</a>
+                </p>
+
+                <label class="order__personal-agreement">
+                  <input
+                    class="order__checkbox"
+                    type="checkbox"
+                    name="orderAgreement"
+                    id="orderAgreement"
+                  />
+                  <span>Соглашаюсь с условиями <a href="#">Политики конфиденциальности</a></span>
+                </label>
+              </div>
+
+              <div class="order__controls">
+                <button class="order__controls-button-next order__move_delivery" disabled>
+                  Продолжить оформление
+                </button>
+                <a class="order__controls-button-prev" href="./basket.html">
+                  Вернуться к Корзине
+                </a>
+              </div>
+            </div>
+
+            <div class="order__delivery order__delivery_self">
+              <div class="order__info">
+                <h4 class="order__info-title">Ваш заказ</h4>
+
+                <div class="order__info-item">
+                  <span>Товары</span>
+                  <span>4 шт.</span>
+                </div>
+
+                <div class="order__info-item">
+                  <span>Общий вес</span>
+                  <span>10 кг</span>
+                </div>
+
+                <div class="order__info-item order__info-item_total">
+                  <span>Стоимость</span>
+                  <span>7370 ₽</span>
+                </div>
+              </div>
+
+              <div class="order__main">
+                <div class="order__delivery-title order__main-title">
+                  <div>Выберите способ доставки</div>
+
+                  <div class="custom-select" data-value="self">
+                    <select class="form-select" id="orderDeliveryMethod" name="orderDeliveryMethod">
+                      <option value="self">Самовывоз</option>
+                      <option value="express">Курьерская доставка (до 25 кг)</option>
+                      <option value="gazel">Доставка Газелью</option>
+                      <option value="kamaz">Доставка Камазом</option>
+                    </select>
+                  </div>
+                </div>
+
+                <p class="order__delivery-description order__delivery-description_self">
+                  Адрес самовывоза: Московская область, Щелковский район, д. Райки, 41-й км
+                  Щелковского шоссе, д.1
+                </p>
+
+                <p class="order__delivery-description order__delivery-description_express">
+                  Минимальная стоимость курьерской доставки - 600 ₽
+                </p>
+
+                <p class="order__delivery-description order__delivery-description_gazel">
+                  Точную стоимость доставки уточнит менеджер при подтверждении заказа.
+                  <a href="#">Скачать тарифы</a>
+                </p>
+
+                <label class="order__delivery-city order__label">
+                  <span>Населенный пункт</span>
+                  <input class="order__input" type="text" name="orderCity" id="orderCity" />
+                </label>
+
+                <label class="order__delivery-street order__label">
+                  <span>Улица</span>
+                  <input class="order__input" type="text" name="orderStreet" id="orderStreet" />
+                </label>
+
+                <div class="order__delivery-address">
+                  <label class="order__delivery-house order__label">
+                    <span>Дом</span>
+                    <input class="order__input" type="text" name="orderHouse" id="orderHouse" />
+                  </label>
+
+                  <label class="order__delivery-building order__label">
+                    <span>Строение</span>
+                    <input
+                      class="order__input"
+                      type="text"
+                      name="orderBuilding"
+                      id="orderBuilding"
+                    />
+                  </label>
+
+                  <label class="order__delivery-room order__label">
+                    <span>Кв./офис</span>
+                    <input class="order__input" type="text" name="orderRoom" id="orderRoom" />
+                  </label>
+                </div>
+
+                <label class="order__delivery-message order__label">
+                  <span>Ваш комментарий по доставке, желаемое время</span>
+                  <textarea
+                    class="order__input"
+                    type="text"
+                    name="orderMessage"
+                    id="orderMessage"
+                    placeholder="Напишите комментарий"
+                  ></textarea>
+                </label>
+
+                <p class="order__delivery-description order__delivery-description_express">
+                  Ваш заказ будет доставлен курьерской службой согласно
+                  <a href="#">тарифным планам, указанным здесь</a>
+                </p>
+              </div>
+
+              <div class="order__controls">
+                <button class="order__controls-button-next order__move_payment">
+                  Продолжить оформление
+                </button>
+                <button class="order__controls-button-prev order__move_personal">
+                  Вернуться к предыдущему шагу
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

@@ -1,4 +1,6 @@
 .order {
+  color: $blue;
+
   &__title {
     margin: 0 0 24px;
 
@@ -100,6 +102,616 @@
       @include mobile {
         display: block;
       }
+    }
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+
+    @include mobile {
+      font-size: 14px;
+    }
+
+    &:has(input:required) {
+      & > span::after {
+        content: "*";
+      }
+    }
+  }
+
+  &__input {
+    display: inline-block;
+    padding: 11px 10px;
+    width: 100%;
+    box-sizing: border-box;
+    color: $blue;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    border-radius: 4px;
+    border: 1px solid $grey300;
+    background: $white;
+    outline: none;
+
+    @include mobile {
+      font-size: 14px;
+      line-height: 120%;
+    }
+  }
+
+  &__content {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  &__info {
+    max-width: 340px;
+    width: 100%;
+    padding: 20px 24px;
+    box-sizing: border-box;
+    background-color: $white;
+
+    @include mobile {
+      padding: 12px 20px;
+    }
+
+    &-title {
+      margin: 0 0 16px;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 150%;
+
+      @include mobile {
+        margin: 0 0 12px;
+        font-size: 20px;
+      }
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0 0 12px;
+      box-sizing: border-box;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+
+      @include tablet {
+        font-size: 16px;
+      }
+
+      @include mobile {
+        max-width: 230px;
+        font-size: 14px;
+      }
+
+      &_total {
+        margin: 20px 0 0;
+        font-weight: 500;
+
+        @include mobile {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  &__main {
+    margin: 0 -40px;
+    padding: 20px 40px 40px;
+    background-color: $grey100;
+
+    @include tablet {
+      margin: 0 -20px;
+      padding: 16px 20px 32px;
+    }
+
+    @include mobile {
+      margin: 0 -10px;
+      padding: 16px 10px 24px;
+    }
+
+    &-title {
+      margin: 0;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 150%;
+
+      @include tablet {
+        font-size: 20px;
+      }
+
+      @include mobile {
+        margin: 0 0 12px;
+        font-size: 16px;
+      }
+    }
+
+    & a {
+      font-weight: 500;
+    }
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 32px;
+    padding: 24px 0 72px;
+
+    @include tablet {
+      padding: 32px 0 56px;
+    }
+
+    @include mobile {
+      gap: 24px;
+      padding: 24px 0 48px;
+    }
+
+    &-button-next,
+    &-button-prev {
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 100%;
+      transition: $baseTransition;
+      cursor: pointer;
+
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+
+    &-button-next {
+      display: inline-block;
+      padding: 12px 24px;
+      color: $white;
+      border: 2px solid $blue;
+      border-radius: 4px;
+      background-color: $blue;
+
+      @include tablet {
+        padding: 14px 20px;
+      }
+
+      @include mobile {
+        padding: 13px 15px;
+      }
+
+      &:hover {
+        background-color: $lightBlue;
+      }
+
+      &:disabled {
+        color: $grey300;
+        border: 2px solid $grey300;
+        background-color: $grey100;
+      }
+    }
+
+    &-button-prev {
+      display: inline-block;
+      color: $blue;
+      text-decoration: underline;
+      border: none;
+      background-color: rgba($color: $white, $alpha: 0);
+
+      &:hover {
+        color: $lightBlue;
+      }
+    }
+  }
+
+  &__personal {
+    position: relative;
+    display: none;
+
+    & .order__info {
+      position: absolute;
+      right: 0;
+      top: 20px;
+
+      @include laptop {
+        max-width: calc((100% - 40px) / 2);
+      }
+
+      @media screen and (max-width: 740px) {
+        position: static;
+        max-width: 340px;
+      }
+    }
+
+    & .order__main {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px 70px;
+      padding-right: 430px;
+
+      @include desktop {
+        gap: 16px 40px;
+      }
+
+      @include laptop {
+        padding-right: 40px;
+      }
+
+      @include tablet {
+        padding-right: 20px;
+      }
+
+      @include mobile {
+        padding-right: 10px;
+      }
+    }
+
+    &-title {
+      flex: 1 1 100%;
+      margin: 0;
+    }
+
+    &-name,
+    &-surname,
+    &-phone,
+    &-email {
+      flex: 1 1 calc((100% - 70px) / 2);
+
+      @include desktop {
+        flex: 1 1 calc((100% - 40px) / 2);
+      }
+
+      @media screen and (max-width: 740px) {
+        flex: 1 1 100%;
+        max-width: none;
+      }
+    }
+
+    &-name,
+    &-surname {
+      @include laptop {
+        flex: 1 1 100%;
+        max-width: calc((100% - 40px) / 2 + 1px);
+      }
+
+      @media screen and (max-width: 740px) {
+        flex: 1 1 100%;
+        max-width: none;
+      }
+    }
+
+    &-bonus {
+      flex: 1 1 100%;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      gap: 40px;
+      margin-top: 32px;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 160%;
+      white-space: nowrap;
+
+      @include laptop {
+        justify-content: flex-end;
+      }
+
+      @media screen and (max-width: 740px) {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 2px;
+        margin: 0;
+        font-size: 16px;
+      }
+
+      @include mobile {
+        font-size: 14px;
+      }
+
+      & .order__input {
+        max-width: 420px;
+
+        @include laptop {
+          max-width: calc((100% - 40px) / 2 + 1px);
+        }
+
+        @media screen and (max-width: 740px) {
+          max-width: none;
+        }
+      }
+    }
+
+    &-description {
+      margin: 0;
+    }
+
+    &-agreement {
+      display: flex;
+      gap: 8px;
+
+      & input {
+        flex: 0 0 auto;
+        display: inline-block;
+        height: 16px;
+        width: 16px;
+        margin: 4px 0 0;
+      }
+    }
+  }
+
+  &__delivery {
+    position: relative;
+    display: none;
+
+    & .order__info {
+      position: absolute;
+      right: 0;
+      top: 20px;
+
+      @include laptop {
+        max-width: calc((100% - 40px) / 2);
+      }
+
+      @media screen and (max-width: 740px) {
+        position: static;
+        max-width: 340px;
+      }
+    }
+
+    & .order__main {
+      display: flex;
+      align-content: flex-start;
+      flex-wrap: wrap;
+      gap: 24px 70px;
+      min-height: 272px;
+      padding-right: 430px;
+      box-sizing: border-box;
+
+      @include desktop {
+        gap: 16px 40px;
+      }
+
+      @include laptop {
+        padding-right: 40px;
+      }
+
+      @include tablet {
+        padding-right: 20px;
+      }
+
+      @include mobile {
+        padding-right: 10px;
+      }
+    }
+
+    &-title {
+      flex: 1 1 100%;
+      display: flex !important;
+      align-items: center;
+      gap: 70px;
+      margin: 0;
+
+      @include laptop {
+        display: block !important;
+      }
+
+      & > .custom-select {
+        flex: 1 1 336px;
+
+        @include laptop {
+          max-width: calc(50% - 20px);
+          margin-top: 16px;
+        }
+
+        @media screen and (max-width: 740px) {
+          max-width: none;
+        }
+
+        & > .select-selected {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 8px 12px;
+          font-size: 20px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 160%;
+          background-color: $white;
+
+          @include laptop {
+            font-size: 18px;
+          }
+
+          @include mobile {
+            font-size: 16px;
+          }
+        }
+
+        & > .select-items {
+          gap: 12px;
+          padding: 8px 0;
+          border: 1px solid $grey300;
+          border-radius: 4px;
+
+          & > div {
+            padding: 0 12px;
+            font-size: 20px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 160%;
+
+            @include laptop {
+              font-size: 18px;
+            }
+
+            @include mobile {
+              font-size: 16px;
+            }
+
+            &:hover {
+              background-color: $grey100;
+            }
+
+            &::before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    &-city {
+      flex: 1 1 100%;
+      max-width: calc(50% - 20px);
+      margin-right: 30%;
+
+      @include laptop {
+        max-width: calc((100% - 40px) / 2 + 1px);
+        margin: 0;
+      }
+
+      @media screen and (max-width: 740px) {
+        max-width: none;
+      }
+    }
+
+    &-street {
+      flex: 0 1 calc(50% - 20px);
+
+      @include laptop {
+        flex: 1 10 100%;
+        max-width: calc((100% - 40px) / 2 + 1px);
+        margin-right: 40%;
+      }
+
+      @media screen and (max-width: 740px) {
+        max-width: none;
+        flex: 1 1 100%;
+        margin: 0;
+      }
+    }
+
+    &-address {
+      flex: 1 1 40%;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    &-house,
+    &-building,
+    &-room {
+      flex: 1 0 25%;
+      white-space: nowrap;
+    }
+
+    &-message {
+      flex: 1 1 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-direction: row;
+      gap: 40px;
+      margin-top: 32px;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 160%;
+      white-space: nowrap;
+
+      @include laptop {
+        justify-content: flex-end;
+      }
+
+      @media screen and (max-width: 740px) {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 2px;
+        margin: 0;
+        font-size: 16px;
+      }
+
+      @include mobile {
+        font-size: 14px;
+      }
+
+      & > span {
+        white-space: wrap;
+        text-align: right;
+      }
+
+      & .order__input {
+        flex: 0 0 calc(50% - 50px);
+        height: 100px;
+
+        @include desktop {
+          flex: 0 0 calc(50% - 20px);
+        }
+
+        @include laptop {
+          max-width: calc((100% - 40px) / 2 + 1px);
+        }
+
+        @media screen and (max-width: 740px) {
+          max-width: none;
+          flex: 0 1 auto;
+        }
+      }
+    }
+
+    &-description {
+      margin: 0;
+
+      @include laptop {
+        max-width: calc(50% - 20px);
+        margin-right: 20%;
+      }
+
+      @media screen and (max-width: 740px) {
+        max-width: none;
+        margin: 0;
+      }
+
+      &:last-child {
+        max-width: none;
+        margin: 0;
+      }
+    }
+
+    &_self .order__main > * {
+      display: none;
+    }
+
+    &_self .order__main > &-description_self {
+      display: block;
+    }
+
+    &_express .order__main > &-description_self,
+    &_express .order__main > &-description_gazel {
+      display: none;
+    }
+
+    &_gazel .order__main > &-description_self,
+    &_gazel .order__main > &-description_express,
+    &_kamaz .order__main > &-description_self,
+    &_kamaz .order__main > &-description_express {
+      display: none;
     }
   }
 }

@@ -9,3 +9,4 @@ import "./modal.js";
 import "./callback-form.js";
 import "./reviews.js";
 import "./basket.js";
+import "./order.js";
