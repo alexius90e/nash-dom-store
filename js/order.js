@@ -12,12 +12,14 @@ const order = {
   building: "",
   room: "",
   comment: "",
-  paymentMethod: "",
+  paymentMethod: "offline",
 };
 
 const orderInputs = document.querySelectorAll(".order__input");
 const orderCheckboxes = document.querySelectorAll(".order__checkbox");
 const orderDeliveryMethodSelect = document.querySelector("#orderDeliveryMethod");
+const orderPaymentOnline = document.querySelector("#orderPaymentOnline");
+const orderPaymentOffline = document.querySelector("#orderPaymentOffline");
 
 [...orderInputs, ...orderCheckboxes].forEach((orderInput) => {
   orderInput.addEventListener("input", (event) => {
@@ -51,6 +53,18 @@ if (orderDeliveryMethodSelect)
     checkButtonsAccess();
   });
 
+if (orderPaymentOnline)
+  orderPaymentOnline.addEventListener("change", (event) => {
+    order.paymentMethod = event.currentTarget.value;
+    checkButtonsAccess();
+  });
+
+if (orderPaymentOffline)
+  orderPaymentOffline.addEventListener("change", (event) => {
+    order.paymentMethod = event.currentTarget.value;
+    checkButtonsAccess();
+  });
+
 function checkButtonsAccess() {
   const moveToDeliveryButton = document.querySelector(
     ".order__personal .order__controls-button-next"
@@ -59,7 +73,7 @@ function checkButtonsAccess() {
     ".order__delivery .order__controls-button-next"
   );
 
-  const isMoveToDeliveryAvailable = order.name && order.surname && order.phone && order.name;
+  const isMoveToDeliveryAvailable = order.name && order.surname && order.phone && order.agreement;
   const isSelfMethodActive = order.deliveryMethod === "self";
   const isMoveToPaymentAvailable =
     order.deliveryMethod !== "self" &&
@@ -86,5 +100,65 @@ function checkButtonsAccess() {
   if (moveToPaymentButton && isMoveToPaymentAvailable) {
     moveToPaymentButton.disabled = false;
     return;
+  }
+}
+
+const orderStagesItems = document.querySelectorAll(".order__stages-item");
+const moveToPersonalButtons = document.querySelectorAll(".order__move_personal");
+const moveToDeliveryButtons = document.querySelectorAll(".order__move_delivery");
+const moveToPaymentButtons = document.querySelectorAll(".order__move_payment");
+const moveToConfirmationButtons = document.querySelectorAll(".order__move_confirmation");
+const moveToCompletedButtons = document.querySelectorAll(".order__move_completed");
+
+moveToPersonalButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    showOrderContentSection("order__personal", 1);
+  });
+});
+
+moveToDeliveryButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    showOrderContentSection("order__delivery", 2);
+  });
+});
+
+moveToPaymentButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    showOrderContentSection("order__payment", 3);
+  });
+});
+
+moveToConfirmationButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    showOrderContentSection("order__confirmation", 4);
+  });
+});
+
+moveToCompletedButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    showOrderContentSection("order__completed", 4);
+  });
+});
+
+function resetOrderStagesItems() {
+  orderStagesItems.forEach((item) => item.classList.remove("active"));
+}
+
+function activateOrderStagesItems(position) {
+  resetOrderStagesItems();
+  [...orderStagesItems].slice(0, position).forEach((item) => item.classList.add("active"));
+}
+
+function hideOrderContentSections() {
+  const sections = document.querySelectorAll(".order__content > *");
+  sections.forEach((section) => section.classList.remove("active"));
+}
+
+function showOrderContentSection(className, position) {
+  const targetSection = document.querySelector(`.${className}`);
+  if (targetSection) {
+    activateOrderStagesItems(position);
+    hideOrderContentSections();
+    targetSection.classList.add("active");
   }
 }

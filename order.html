@@ -1596,7 +1596,7 @@
           </div>
 
           <div class="order__content">
-            <div class="order__personal">
+            <div class="order__personal ">
               <div class="order__info">
                 <h4 class="order__info-title">Ваш заказ</h4>
 
@@ -1799,6 +1799,77 @@
                 <button class="order__controls-button-prev order__move_personal">
                   Вернуться к предыдущему шагу
                 </button>
+              </div>
+            </div>
+
+            <div class="order__payment">
+              <div class="order__main">
+                <label class="order__payment-method">
+                  <input
+                    type="radio"
+                    id="orderPaymentOffline"
+                    name="orderPayment"
+                    value="offline"
+                    checked
+                  />
+
+                  <div class="order__payment-method-name">
+                    Оплата наличными или банковской картой курьеру
+                  </div>
+                </label>
+
+                <label class="order__payment-method">
+                  <input type="radio" id="orderPaymentOnline" name="orderPayment" value="online" />
+
+                  <div class="order__payment-method-name">Оплата онлайн</div>
+                  <div class="order__payment-method-description">
+                    Оплата происходит не сразу, а только после подтверждения заказа
+                  </div>
+                  <div class="order__payment-method-logos">
+                    <img src="./assets/payment/iomoney.png" alt="iomoney" />
+                    <img src="./assets/payment/mir.png" alt="mir" />
+                    <img src="./assets/payment/mastercard.png" alt="mastercard" />
+                    <img src="./assets/payment/visa.png" alt="visa" />
+                    <img src="./assets/payment/qiwi.png" alt="qiwi" />
+                  </div>
+                </label>
+              </div>
+
+              <div class="order__controls">
+                <button class="order__controls-button-next order__move_confirmation">
+                  Продолжить оформление
+                </button>
+                <button class="order__controls-button-prev order__move_delivery">
+                  Вернуться к предыдущему шагу
+                </button>
+              </div>
+            </div>
+
+            <div class="order__confirmation">
+              <div class="order__main">order__confirmation</div>
+
+              <div class="order__controls">
+                <button class="order__controls-button-next order__move_completed">
+                  Продолжить оформление
+                </button>
+                <button class="order__controls-button-prev order__move_payment">
+                  Вернуться к предыдущему шагу
+                </button>
+              </div>
+            </div>
+
+            <div class="order__completed active">
+              <div class="order__main">
+                <div class="order__completed-body">
+                  <div class="order__completed-title">Ваш заказ оформлен!</div>
+                  <div class="order__completed-title">Спасибо!</div>
+                  <div class="order__completed-text">
+                    В ближайшее время с Вами свяжется наш менеджер
+                  </div>
+                  <div class="order__completed-info">
+                    Номер Вашего заказа: <span class="order__completed-info-id">15283</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
