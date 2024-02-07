@@ -87,32 +87,32 @@ function updateOrderData() {
     (elem) => elem.dataset.id === "deliveryMethod"
   );
 
-  nameElem.innerHTML = order.name;
-  surnameElem.innerHTML = order.surname;
-  phoneElem.innerHTML = order.phone;
-  emailElem.innerHTML = order.email;
-  paymentMethodElem.innerHTML =
+  if (nameElem) nameElem.innerHTML = order.name;
+  if (surnameElem) surnameElem.innerHTML = order.surname;
+  if (phoneElem) phoneElem.innerHTML = order.phone;
+  if (emailElem) emailElem.innerHTML = order.email;
+  if (paymentMethodElem) paymentMethodElem.innerHTML =
     order.paymentMethod === "online" ? "Оплата онлайн" : "Оплата курьеру";
 
-  if (order.deliveryMethod === "self") {
+  if (deliveryMethodElem && order.deliveryMethod === "self") {
     deliveryMethodElem.innerHTML = "Самовывоз";
 
-    cityElem.innerHTML = "";
-    streetElem.innerHTML = "";
-    houseElem.innerHTML = "";
-    buildingElem.innerHTML = "";
-    roomElem.innerHTML = "";
-  } else {
+     if (cityElem) cityElem.innerHTML = "";
+     if (streetElem) streetElem.innerHTML = "";
+     if (houseElem) houseElem.innerHTML = "";
+     if (buildingElem) buildingElem.innerHTML = "";
+     if (roomElem) roomElem.innerHTML = "";
+  } else if (deliveryMethodElem && order.deliveryMethod !== "self") {
     if (order.deliveryMethod === "express")
       deliveryMethodElem.innerHTML = "Курьерская доставка (до 25 кг)";
     if (order.deliveryMethod === "gazel") deliveryMethodElem.innerHTML = "Доставка Газелью";
     if (order.deliveryMethod === "kamaz") deliveryMethodElem.innerHTML = "Доставка Камазом";
 
-    cityElem.innerHTML = order.city;
-    streetElem.innerHTML = order.street;
-    houseElem.innerHTML = order.house;
-    buildingElem.innerHTML = order.building;
-    roomElem.innerHTML = order.room;
+    if (cityElem) cityElem.innerHTML = order.city;
+    if (streetElem) streetElem.innerHTML = order.street;
+    if (houseElem) houseElem.innerHTML = order.house;
+    if (buildingElem) buildingElem.innerHTML = order.building;
+    if (roomElem) roomElem.innerHTML = order.room;
   }
 }
 

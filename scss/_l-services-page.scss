@@ -1,0 +1,96 @@
+.services-page {
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__card {
+    position: relative;
+    min-height: 252px;
+    padding: 20px 16px;
+    padding-left: 204px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid $grey300;
+
+    @include mobile {
+      position: static;
+      padding: 16px 4px;
+    }
+
+    &-image {
+      position: absolute;
+      top: 72px;
+      left: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 176px;
+      height: 160px;
+
+      @include mobile {
+        position: static;
+        width: 140px;
+        height: 88px;
+        margin: 0 auto 8px;
+      }
+
+      & img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+    }
+
+    &-title {
+      margin: 0 0 16px;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 150%;
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      color: $blue;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+
+      @include mobile {
+        gap: 8px;
+        font-size: 14px;
+      }
+
+      & p {
+        margin: 0;
+      }
+
+      & ul {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin: 0;
+
+        @include mobile {
+          gap: 4px;
+        }
+      }
+
+      & a {
+        color: $blue;
+        font-weight: 500;
+        text-decoration: underline;
+        transition: $baseTransition;
+
+        &:hover {
+          color: $lightBlue;
+        }
+      }
+    }
+  }
+}
