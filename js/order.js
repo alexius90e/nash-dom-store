@@ -15,6 +15,8 @@ const order = {
   paymentMethod: "offline",
 };
 
+updateOrderData();
+
 const orderInputs = document.querySelectorAll(".order__input");
 const orderCheckboxes = document.querySelectorAll(".order__checkbox");
 const orderDeliveryMethodSelect = document.querySelector("#orderDeliveryMethod");
@@ -65,6 +67,55 @@ if (orderPaymentOffline)
     checkButtonsAccess();
   });
 
+function updateOrderData() {
+  const orderDataItemsValueElems = [
+    ...document.querySelectorAll(".order__confirmation-data-item-value"),
+  ];
+  const nameElem = orderDataItemsValueElems.find((elem) => elem.dataset.id === "name");
+  const surnameElem = orderDataItemsValueElems.find((elem) => elem.dataset.id === "surname");
+  const phoneElem = orderDataItemsValueElems.find((elem) => elem.dataset.id === "phone");
+  const emailElem = orderDataItemsValueElems.find((elem) => elem.dataset.id === "email");
+  const cityElem = orderDataItemsValueElems.find((elem) => elem.dataset.id === "city");
+  const streetElem = orderDataItemsValueElems.find((elem) => elem.dataset.id === "street");
+  const houseElem = orderDataItemsValueElems.find((elem) => elem.dataset.id === "house");
+  const buildingElem = orderDataItemsValueElems.find((elem) => elem.dataset.id === "building");
+  const roomElem = orderDataItemsValueElems.find((elem) => elem.dataset.id === "room");
+  const paymentMethodElem = orderDataItemsValueElems.find(
+    (elem) => elem.dataset.id === "paymentMethod"
+  );
+  const deliveryMethodElem = orderDataItemsValueElems.find(
+    (elem) => elem.dataset.id === "deliveryMethod"
+  );
+
+  nameElem.innerHTML = order.name;
+  surnameElem.innerHTML = order.surname;
+  phoneElem.innerHTML = order.phone;
+  emailElem.innerHTML = order.email;
+  paymentMethodElem.innerHTML =
+    order.paymentMethod === "online" ? "Оплата онлайн" : "Оплата курьеру";
+
+  if (order.deliveryMethod === "self") {
+    deliveryMethodElem.innerHTML = "Самовывоз";
+
+    cityElem.innerHTML = "";
+    streetElem.innerHTML = "";
+    houseElem.innerHTML = "";
+    buildingElem.innerHTML = "";
+    roomElem.innerHTML = "";
+  } else {
+    if (order.deliveryMethod === "express")
+      deliveryMethodElem.innerHTML = "Курьерская доставка (до 25 кг)";
+    if (order.deliveryMethod === "gazel") deliveryMethodElem.innerHTML = "Доставка Газелью";
+    if (order.deliveryMethod === "kamaz") deliveryMethodElem.innerHTML = "Доставка Камазом";
+
+    cityElem.innerHTML = order.city;
+    streetElem.innerHTML = order.street;
+    houseElem.innerHTML = order.house;
+    buildingElem.innerHTML = order.building;
+    roomElem.innerHTML = order.room;
+  }
+}
+
 function checkButtonsAccess() {
   const moveToDeliveryButton = document.querySelector(
     ".order__personal .order__controls-button-next"
@@ -72,6 +123,8 @@ function checkButtonsAccess() {
   const moveToPaymentButton = document.querySelector(
     ".order__delivery .order__controls-button-next"
   );
+
+  updateOrderData();
 
   const isMoveToDeliveryAvailable = order.name && order.surname && order.phone && order.agreement;
   const isSelfMethodActive = order.deliveryMethod === "self";
