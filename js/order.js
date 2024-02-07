@@ -91,17 +91,18 @@ function updateOrderData() {
   if (surnameElem) surnameElem.innerHTML = order.surname;
   if (phoneElem) phoneElem.innerHTML = order.phone;
   if (emailElem) emailElem.innerHTML = order.email;
-  if (paymentMethodElem) paymentMethodElem.innerHTML =
-    order.paymentMethod === "online" ? "Оплата онлайн" : "Оплата курьеру";
+  if (paymentMethodElem)
+    paymentMethodElem.innerHTML =
+      order.paymentMethod === "online" ? "Оплата онлайн" : "Оплата курьеру";
 
   if (deliveryMethodElem && order.deliveryMethod === "self") {
     deliveryMethodElem.innerHTML = "Самовывоз";
 
-     if (cityElem) cityElem.innerHTML = "";
-     if (streetElem) streetElem.innerHTML = "";
-     if (houseElem) houseElem.innerHTML = "";
-     if (buildingElem) buildingElem.innerHTML = "";
-     if (roomElem) roomElem.innerHTML = "";
+    if (cityElem) cityElem.innerHTML = "";
+    if (streetElem) streetElem.innerHTML = "";
+    if (houseElem) houseElem.innerHTML = "";
+    if (buildingElem) buildingElem.innerHTML = "";
+    if (roomElem) roomElem.innerHTML = "";
   } else if (deliveryMethodElem && order.deliveryMethod !== "self") {
     if (order.deliveryMethod === "express")
       deliveryMethodElem.innerHTML = "Курьерская доставка (до 25 кг)";
@@ -162,34 +163,47 @@ const moveToDeliveryButtons = document.querySelectorAll(".order__move_delivery")
 const moveToPaymentButtons = document.querySelectorAll(".order__move_payment");
 const moveToConfirmationButtons = document.querySelectorAll(".order__move_confirmation");
 const moveToCompletedButtons = document.querySelectorAll(".order__move_completed");
+const orderStagesSteps = document.querySelector(".order__stages-steps");
+const orderStagesName = document.querySelector(".order__stages-name");
 
 moveToPersonalButtons.forEach((button) => {
   button.addEventListener("click", () => {
     showOrderContentSection("order__personal", 1);
+    if (orderStagesSteps) orderStagesSteps.innerHTML = "Шаг 1 из 4";
+    if (orderStagesName) orderStagesName.innerHTML = "Персональные данные";
+    console.log(orderStagesSteps)
   });
 });
 
 moveToDeliveryButtons.forEach((button) => {
   button.addEventListener("click", () => {
     showOrderContentSection("order__delivery", 2);
+    if (orderStagesSteps) orderStagesSteps.innerHTML = "Шаг 2 из 4";
+    if (orderStagesName) orderStagesName.innerHTML = "Доставка или самовывоз";
   });
 });
 
 moveToPaymentButtons.forEach((button) => {
   button.addEventListener("click", () => {
     showOrderContentSection("order__payment", 3);
+    if (orderStagesSteps) orderStagesSteps.innerHTML = "Шаг 3 из 4";
+    if (orderStagesName) orderStagesName.innerHTML = "Оплата заказа";
   });
 });
 
 moveToConfirmationButtons.forEach((button) => {
   button.addEventListener("click", () => {
     showOrderContentSection("order__confirmation", 4);
+    if (orderStagesSteps) orderStagesSteps.innerHTML = "Шаг 4 из 4";
+    if (orderStagesName) orderStagesName.innerHTML = "Подтверждение заказа";
   });
 });
 
 moveToCompletedButtons.forEach((button) => {
   button.addEventListener("click", () => {
     showOrderContentSection("order__completed", 4);
+    if (orderStagesSteps) orderStagesSteps.innerHTML = "Шаг 4 из 4";
+    if (orderStagesName) orderStagesName.innerHTML = "Подтверждение заказа";
   });
 });
 
