@@ -7054,7 +7054,8 @@ ul {
 .order__confirmation-description {
   display: flex;
   gap: 4px;
-  margin: 24px 0 40px;
+  max-width: 992px;
+  margin: 24px auto 40px;
 }
 @media (max-width: 992px) {
   .order__confirmation-description {
@@ -7073,7 +7074,10 @@ ul {
 .order__confirmation-data {
   display: flex;
   gap: 64px;
+  max-width: 992px;
+  margin: 0 auto;
   padding: 20px 27px 40px;
+  box-sizing: border-box;
   background-color: #ffffff;
 }
 @media (max-width: 1200px) {
@@ -7321,5 +7325,97 @@ ul {
   transition: all ease-in-out 0.15s;
 }
 .services-page__card-content a:hover {
+  color: #0535DF;
+}
+
+.service-details {
+  position: relative;
+  padding-left: 196px;
+}
+@media (max-width: 576px) {
+  .service-details {
+    padding-left: 0;
+  }
+}
+.service-details__image {
+  position: absolute;
+  top: 60px;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 176px;
+  height: 160px;
+}
+@media (max-width: 576px) {
+  .service-details__image {
+    position: static;
+    width: 140px;
+    height: 96px;
+    margin: 0 auto 8px;
+  }
+}
+.service-details__image img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+.service-details__title {
+  margin: 0 0 20px;
+  padding: 2px 8px;
+  color: #041862;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  background-color: #ececec;
+}
+@media (max-width: 576px) {
+  .service-details__title {
+    font-size: 20px;
+  }
+}
+.service-details__content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: #041862;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+@media (max-width: 576px) {
+  .service-details__content {
+    gap: 8px;
+    font-size: 14px;
+  }
+}
+.service-details__content h4 {
+  margin: 0;
+  font-weight: 600;
+}
+.service-details__content p {
+  margin: 0;
+}
+.service-details__content ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+}
+@media (max-width: 576px) {
+  .service-details__content ul {
+    gap: 4px;
+  }
+}
+.service-details__content a {
+  color: #041862;
+  font-weight: 500;
+  text-decoration: underline;
+  transition: all ease-in-out 0.15s;
+}
+.service-details__content a:hover {
   color: #0535DF;
 }

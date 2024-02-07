@@ -1,0 +1,95 @@
+.service-details {
+  position: relative;
+  padding-left: 196px;
+
+  @include mobile {
+    padding-left: 0;
+  }
+
+  &__image {
+    position: absolute;
+    top: 60px;
+    left: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 176px;
+    height: 160px;
+
+    @include mobile {
+      position: static;
+      width: 140px;
+      height: 96px;
+      margin: 0 auto 8px;
+    }
+
+    & img {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      height: auto;
+    }
+  }
+
+  &__title {
+    margin: 0 0 20px;
+    padding: 2px 8px;
+    color: $blue;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    background-color: $grey100;
+
+    @include mobile {
+      font-size: 20px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: $blue;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+
+    @include mobile {
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    & h4 {
+      margin: 0;
+      font-weight: 600;
+    }
+
+    & p {
+      margin: 0;
+    }
+
+    & ul {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 0;
+
+      @include mobile {
+        gap: 4px;
+      }
+    }
+
+    & a {
+      color: $blue;
+      font-weight: 500;
+      text-decoration: underline;
+      transition: $baseTransition;
+
+      &:hover {
+        color: $lightBlue;
+      }
+    }
+  }
+}
