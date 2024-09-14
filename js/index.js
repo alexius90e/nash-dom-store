@@ -12,3 +12,16 @@ import "./reviews.js";
 import "./basket.js";
 import "./order.js";
 import "./auth.js";
+import "./cabinet.js";
+
+const maskOptions = {
+  mask: '+{7} 000 000 00 00',
+};
+
+const phoneInputSelectors = ['input[type="tel"]'];
+
+const phoneInputs = phoneInputSelectors
+  .map((selector) => document.querySelectorAll(`${selector}`))
+  .reduce((acc, array) => [...acc, ...array], []);
+
+phoneInputs.forEach((inputElement) => IMask(inputElement, maskOptions));

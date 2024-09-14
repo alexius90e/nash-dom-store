@@ -174,7 +174,8 @@
     }
   }
 
-  &-register {
+  &-register,
+  &-security {
     & .modal__content {
       max-width: calc(100% - 30px);
       width: 920px;
@@ -230,7 +231,7 @@
         @include tablet {
           font-size: 20px;
         }
-  
+
         @include mobile {
           font-size: 14px;
         }

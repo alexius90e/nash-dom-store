@@ -4068,29 +4068,29 @@ ul {
   line-height: 32px;
   text-align: center;
 }
-.modal-register .modal__content {
+.modal-register .modal__content, .modal-security .modal__content {
   max-width: calc(100% - 30px);
   width: 920px;
   padding: 87px 32px;
   box-sizing: border-box;
 }
 @media (max-width: 768px) {
-  .modal-register .modal__content {
+  .modal-register .modal__content, .modal-security .modal__content {
     width: 600px;
     padding: 48px 24px 68px;
   }
 }
 @media (max-width: 576px) {
-  .modal-register .modal__content {
+  .modal-register .modal__content, .modal-security .modal__content {
     padding: 52px 24px;
   }
 }
-.modal-register .modal__body {
+.modal-register .modal__body, .modal-security .modal__body {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.modal-register__title {
+.modal-register__title, .modal-security__title {
   margin: 0 0 32px;
   color: #041862;
   text-align: center;
@@ -4100,18 +4100,18 @@ ul {
   line-height: 150%;
 }
 @media (max-width: 768px) {
-  .modal-register__title {
+  .modal-register__title, .modal-security__title {
     margin: 0 0 24px;
     font-size: 24px;
   }
 }
 @media (max-width: 576px) {
-  .modal-register__title {
+  .modal-register__title, .modal-security__title {
     margin: 0 0 8px;
     font-size: 16px;
   }
 }
-.modal-register__cabinet-link {
+.modal-register__cabinet-link, .modal-security__cabinet-link {
   font-weight: 500;
   font-size: 24px;
   line-height: 140%;
@@ -4122,12 +4122,12 @@ ul {
   color: #041862;
 }
 @media (max-width: 768px) {
-  .modal-register__cabinet-link {
+  .modal-register__cabinet-link, .modal-security__cabinet-link {
     font-size: 20px;
   }
 }
 @media (max-width: 576px) {
-  .modal-register__cabinet-link {
+  .modal-register__cabinet-link, .modal-security__cabinet-link {
     font-size: 14px;
   }
 }
