@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="https://unpkg.com/imask" defer></script>
     <script type="module" src="./js/index.js" defer></script>
   </head>
   <body>
@@ -1578,7 +1579,7 @@
         <div class="container">
           <nav class="breadcrumbs">
             <a class="breadcrumbs__item" href="./index.html">Главная</a>
-            <a class="breadcrumbs__item" href="./">Регистрация</a>
+            <a class="breadcrumbs__item" href="./register.html">Регистрация</a>
           </nav>
 
           <h2 class="register__title h2">Регистрация</h2>
@@ -1607,7 +1608,7 @@
                 <label class="auth-form__label">
                   <div class="auth-form__label-text">Телефон</div>
                   <div class="auth-form__input">
-                    <input type="tel" id="registerPhone" name="phone" required />
+                    <input type="tel" id="registerPhone" name="phone" placeholder="+7 999 999 99 99" required />
                   </div>
                 </label>
 
@@ -1644,7 +1645,7 @@
                 <button class="button auth-form__submit" disabled>Создать профиль</button>
 
                 <div class="auth-form__back">
-                  <a class="auth-form__back-link" href="#">Вернуться к предыдущему шагу</a>
+                  <a class="auth-form__back-link" href="./login.html">Вернуться к предыдущему шагу</a>
                 </div>
               </div>
             </div>

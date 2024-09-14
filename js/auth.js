@@ -20,7 +20,6 @@ authPasswordElems.forEach((element) => {
 const registerForm = document.querySelector('.register .auth-form');
 const registerFormSubmitBtn = document.querySelector('.auth-form__submit');
 
-
 if (registerForm && registerFormSubmitBtn) {
   const formInputs = registerForm.querySelectorAll('.auth-form__input input');
 
@@ -36,7 +35,19 @@ if (registerForm && registerFormSubmitBtn) {
     registerForm.addEventListener('submit', (event) => {
       event.preventDefault();
       const modalRegister = document.querySelector('.modal-register');
-      if (modalRegister) modalRegister.classList.add('active')
+      if (modalRegister) modalRegister.classList.add('active');
     });
   });
 }
+
+const maskOptions = {
+  mask: '+{7} 000 000 00 00',
+};
+
+const phoneInputSelectors = ['input[type="tel"]'];
+
+const phoneInputs = phoneInputSelectors
+  .map((selector) => document.querySelectorAll(`${selector}`))
+  .reduce((acc, array) => [...acc, ...array], []);
+
+phoneInputs.forEach((inputElement) => IMask(inputElement, maskOptions));
