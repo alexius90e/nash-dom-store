@@ -1,0 +1,212 @@
+.auth-form {
+  &__top,
+  &__bottom {
+    margin: 0 -40px;
+    padding: 0 40px;
+
+    @include tablet {
+      margin: 0 -20px;
+      padding: 0 20px;
+    }
+
+    @include mobile {
+      margin: 0 -10px;
+      padding: 10 10px;
+    }
+  }
+
+  &__top {
+    padding-top: 16px;
+    padding-bottom: 24px;
+    background-color: #ececec;
+
+    @include tablet {
+      padding-bottom: 16px;
+    }
+
+    @include mobile {
+      padding-top: 8px;
+      padding-bottom: 12px;
+    }
+  }
+
+  &__bottom {
+    padding-top: 24px;
+    padding-bottom: 56px;
+    background-color: #ffffff;
+
+    @include mobile {
+      padding-bottom: 48px;
+    }
+  }
+
+  &__content {
+    max-width: 400px;
+    margin: 0 auto;
+
+    & > * {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__title {
+    margin: 0 0 24px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    color: #041862;
+    text-align: center;
+
+    @include mobile {
+      margin: 0 0 12px;
+      font-size: 16px;
+    }
+  }
+
+  &__label {
+    display: block;
+    max-width: 336px;
+    margin: 0 auto 24px;
+
+    @include tablet {
+      margin-bottom: 16px;
+    }
+
+    @include mobile {
+      max-width: 304px;
+      margin-bottom: 12px;
+    }
+
+    &-text {
+      margin: 0 0 4px;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      color: #041862;
+
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &__input {
+    & input {
+      display: block;
+      max-width: none;
+      width: 100%;
+      padding: 10px 13px;
+      padding-right: 64px;
+      box-sizing: border-box;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 150%;
+      color: #041862;
+      border: 1px solid #a0a6aa;
+      border-radius: 4px;
+      outline-color: #0535df;
+
+      @include mobile {
+        padding-right: 36px;
+        font-size: 14px;
+      }
+
+      &::placeholder {
+        color: #a0a6aa;
+      }
+    }
+
+    &_password {
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 16px;
+        z-index: 5;
+        display: block;
+        width: 16px;
+        height: 16px;
+        transform: translate3d(0, -50%, 0);
+        background: url(../assets/icons/eye.svg);
+        transition: filter ease-in-out 0.1s;
+        cursor: pointer;
+      }
+
+      &.active::after {
+        filter: brightness(0.2);
+      }
+    }
+  }
+
+  &__recover {
+    display: block;
+    max-width: 336px;
+    margin: 0 auto 24px;
+
+    @include tablet {
+      margin-bottom: 16px;
+    }
+
+    @include mobile {
+      max-width: 304px;
+      margin-bottom: 12px;
+    }
+
+    &-link {
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 160%;
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      text-align: center;
+      color: #041862;
+
+      @include mobile {
+        font-size: 14px;
+        line-height: 143%;
+      }
+    }
+  }
+
+  & .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 264px;
+    margin: 0 auto 32px;
+    padding-left: 16px;
+    padding-right: 16px;
+
+    @include mobile {
+      max-width: 184px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__policy {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: #041862;
+
+    @include mobile {
+      font-size: 14px;
+    }
+
+    & a {
+      font-weight: 500;
+      color: #041862;
+
+      &:hover {
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        color: #0535df;
+      }
+    }
+  }
+}

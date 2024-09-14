@@ -1,0 +1,11 @@
+.login {
+
+  
+  &__title {
+    margin-bottom: 24px;
+
+    @include tablet {
+      margin-bottom: 20px;
+    }
+  }
+}
