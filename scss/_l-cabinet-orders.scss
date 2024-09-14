@@ -1,0 +1,174 @@
+.cabinet-orders {
+  &__title {
+    margin: 0 0 24px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 150%;
+    color: #041862;
+    text-align: left;
+
+    @include mobile {
+      margin: 0 0 12px;
+      font-size: 16px;
+      text-align: center;
+    }
+  }
+
+  &__heading {
+    display: flex;
+    align-items: center;
+    gap: 16px 32px;
+    padding: 12px;
+    margin: 0 0 24px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 160%;
+    color: #041862;
+    background-color: #ffffff;
+
+    @include mobile {
+      display: none;
+    }
+
+    &-item {
+      flex: 0 0 136px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @include mobile {
+      gap: 12px;
+    }
+
+    &::before {
+      content: 'Нет заказов';
+      display: block;
+      padding: 12px;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 160%;
+      color: #041862;
+      background-color: #ffffff;
+    }
+
+    &:has(.cabinet-orders__card)::before {
+      display: none;
+    }
+  }
+
+  &__card {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px 32px;
+    padding: 12px;
+    background-color: #ffffff;
+
+    @include mobile {
+      gap: 12px;
+    }
+
+    &-item {
+      flex: 0 0 136px;
+
+      @include mobile {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex: 1 1 100%;
+      }
+
+      &-value {
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 160%;
+        color: #041862;
+
+        @include laptop {
+          font-weight: 500;
+          line-height: 120%;
+        }
+
+        @include mobile {
+          font-size: 14px;
+          line-height: 143%;
+        }
+      }
+
+      &-text {
+        display: none;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 171%;
+        color: #041862;
+
+        @include mobile {
+          display: inline-block;
+          flex: 0 0 86px;
+        }
+      }
+    }
+
+    &-more {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex: 1 1 auto;
+
+      @include tablet {
+        justify-content: flex-end;
+        flex: 1 1 100%;
+      }
+
+      &-link {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 120%;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        text-align: center;
+        color: #041862;
+        transition: color ease-in-out 0.1s;
+
+        &:hover {
+          color: #0535df;
+        }
+
+        &::after {
+          content: '';
+          display: none;
+          height: 32px;
+          width: 32px;
+          background: url(../assets/icons/arrow-left.svg) center / cover no-repeat;
+          transform: rotate(180deg);
+          transition: filter ease-in-out 0.1s;
+
+          @include tablet {
+            display: block;
+          }
+
+          @include mobile {
+            height: 24px;
+            width: 24px;
+          }
+        }
+
+        &:hover::after {
+          filter: brightness(2.5);
+        }
+
+        @include mobile {
+          font-size: 14px;
+          line-height: 143%;
+        }
+      }
+    }
+  }
+}
