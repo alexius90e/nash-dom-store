@@ -1580,12 +1580,13 @@
             <a class="breadcrumbs__item" href="./index.html">Главная</a>
             <a class="breadcrumbs__item" href="./cabinet.html">Личный кабинет</a>
             <a class="breadcrumbs__item" href="./cabinet-orders.html">Мои заказы</a>
+            <a class="breadcrumbs__item" href="./cabinet-order.html">Заказ № 15283</a>
           </nav>
 
           <div class="cabinet__back">
-            <a class="cabinet__back-link" href="./cabinet.html"
-              >Вернуться в меню Личного кабинета</a
-            >
+            <a class="cabinet__back-link" href="./cabinet-orders.html">
+              Вернуться к Списку заказов
+            </a>
           </div>
 
           <h2 class="cabinet__title h2">Мои заказы</h2>
@@ -1611,59 +1612,104 @@
             </aside>
 
             <div class="cabinet__content">
-              <div class="cabinet-orders">
-                <div class="cabinet-orders__title">Список заказов</div>
-
-                <div class="cabinet-orders__heading">
-                  <div class="cabinet-orders__heading-item">№ заказа</div>
-                  <div class="cabinet-orders__heading-item">Дата</div>
-                  <div class="cabinet-orders__heading-item">Сумма</div>
+              <div class="cabinet-order">
+                <div class="cabinet-order__back">
+                  <a class="cabinet-order__back-link" href="./cabinet-orders.html">
+                    К списку заказов
+                  </a>
                 </div>
 
-                <div class="cabinet-orders__list">
-                  <div class="cabinet-orders__card">
-                    <div class="cabinet-orders__card-item">
-                      <span class="cabinet-orders__card-item-text">№ заказа</span>
-                      <span class="cabinet-orders__card-item-value">15283</span>
+                <div class="cabinet-order__title">
+                  <span class="cabinet-order__title-text">Заказ № 15283</span>
+                  <span class="cabinet-order__title-date">от 15.01.2024</span>
+                </div>
+
+                <div class="cabinet-order__status">Доставлен</div>
+
+                <div class="cabinet-order__content">
+                  <div class="cabinet-order__quantity">
+                    Товары (<span class="cabinet-order__quantity-value">4</span>)
+                  </div>
+
+                  <div class="cabinet-order__card">
+                    <figure class="cabinet-order__card-figure">
+                      <img
+                        class="cabinet-order__card-figure-image"
+                        src="./assets/goods/good-5.jpg"
+                        alt="good"
+                      />
+                    </figure>
+
+                    <div class="cabinet-order__card-info">
+                      <div class="cabinet-order__card-info-name">Фанера 12мм (1525-3050)</div>
+                      <div class="cabinet-order__card-info-id">Артикул 154867</div>
                     </div>
 
-                    <div class="cabinet-orders__card-item">
-                      <span class="cabinet-orders__card-item-text">Дата</span>
-                      <span class="cabinet-orders__card-item-value">15.01.2024</span>
+                    <div class="cabinet-order__card-details">
+                      <div class="cabinet-order__card-details-price">1505 ₽</div>
+                      <div class="cabinet-order__card-details-quantity">1 шт.</div>
                     </div>
 
-                    <div class="cabinet-orders__card-item">
-                      <span class="cabinet-orders__card-item-text">Сумма</span>
-                      <span class="cabinet-orders__card-item-value">7370 ₽</span>
+                    <div class="cabinet-order__card-total">1505 ₽</div>
+                  </div>
+
+                  <div class="cabinet-order__card">
+                    <figure class="cabinet-order__card-figure">
+                      <img
+                        class="cabinet-order__card-figure-image"
+                        src="./assets/goods/good-1.jpg"
+                        alt="good"
+                      />
+                    </figure>
+
+                    <div class="cabinet-order__card-info">
+                      <div class="cabinet-order__card-info-name">ЦСП 16×1250×3200мм (4кв.м) </div>
+                      <div class="cabinet-order__card-info-id">Артикул 172629</div>
                     </div>
 
-                    <div class="cabinet-orders__card-more">
-                      <a class="cabinet-orders__card-more-link" href="./cabinet-order.html">
-                        Подробнее
-                      </a>
+                    <div class="cabinet-order__card-details">
+                      <div class="cabinet-order__card-details-price">3935 ₽</div>
+                      <div class="cabinet-order__card-details-quantity">1 шт.</div>
+                    </div>
+
+                    <div class="cabinet-order__card-total">3935 ₽</div>
+                  </div>
+
+                  <div class="cabinet-order__card">
+                    <figure class="cabinet-order__card-figure">
+                      <img
+                        class="cabinet-order__card-figure-image"
+                        src="./assets/goods/good-8.jpg"
+                        alt="good"
+                      />
+                    </figure>
+
+                    <div class="cabinet-order__card-info">
+                      <div class="cabinet-order__card-info-name">Масло для интерьера Prostocolor 0,75 л для внутренних работ (Германия)</div>
+                      <div class="cabinet-order__card-info-id">Артикул 154867</div>
+                    </div>
+
+                    <div class="cabinet-order__card-details">
+                      <div class="cabinet-order__card-details-price">965 ₽</div>
+                      <div class="cabinet-order__card-details-quantity">2 шт.</div>
+                    </div>
+
+                    <div class="cabinet-order__card-total">1930 ₽</div>
+                  </div>
+
+                  
+
+                  <div class="cabinet-order__delivery">
+                    <div class="cabinet-order__delivery-text">Стоимость доставки</div>
+                    <div class="cabinet-order__delivery-cost">
+                      <span class="cabinet-order__delivery-cost-value">0</span> ₽
                     </div>
                   </div>
 
-                  <div class="cabinet-orders__card">
-                    <div class="cabinet-orders__card-item">
-                      <span class="cabinet-orders__card-item-text">№ заказа</span>
-                      <span class="cabinet-orders__card-item-value">13241</span>
-                    </div>
-
-                    <div class="cabinet-orders__card-item">
-                      <span class="cabinet-orders__card-item-text">Дата</span>
-                      <span class="cabinet-orders__card-item-value">01.04.2023</span>
-                    </div>
-
-                    <div class="cabinet-orders__card-item">
-                      <span class="cabinet-orders__card-item-text">Сумма</span>
-                      <span class="cabinet-orders__card-item-value">10456 ₽</span>
-                    </div>
-
-                    <div class="cabinet-orders__card-more">
-                      <a class="cabinet-orders__card-more-link" href="./cabinet-order.html">
-                        Подробнее
-                      </a>
+                  <div class="cabinet-order__total">
+                    <div class="cabinet-order__total-text">Общая стоимость заказа</div>
+                    <div class="cabinet-order__total-cost">
+                      <span class="cabinet-order__total-cost-value">7370</span> ₽
                     </div>
                   </div>
                 </div>
