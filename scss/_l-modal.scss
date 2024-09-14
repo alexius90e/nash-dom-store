@@ -173,4 +173,68 @@
       text-align: center;
     }
   }
+
+  &-register {
+    & .modal__content {
+      max-width: calc(100% - 30px);
+      width: 920px;
+      padding: 87px 32px;
+      box-sizing: border-box;
+
+      @include tablet {
+        width: 600px;
+        padding: 48px 24px 68px;
+      }
+
+      @include mobile {
+        padding: 52px 24px;
+      }
+    }
+
+    & .modal__body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__title {
+      margin: 0 0 32px;
+      color: $blue;
+      text-align: center;
+      font-size: 32px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 150%;
+
+      @include tablet {
+        margin: 0 0 24px;
+        font-size: 24px;
+      }
+
+      @include mobile {
+        margin: 0 0 8px;
+        font-size: 16px;
+      }
+    }
+
+    &__cabinet {
+      &-link {
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 140%;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        text-align: center;
+        color: #041862;
+
+        @include tablet {
+          font-size: 20px;
+        }
+  
+        @include mobile {
+          font-size: 14px;
+        }
+      }
+    }
+  }
 }

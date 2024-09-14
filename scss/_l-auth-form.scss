@@ -65,6 +65,26 @@
     }
   }
 
+  &__description {
+    margin: 0 0 16px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 160%;
+    text-align: center;
+    color: #041862;
+
+    @include tablet {
+      font-size: 16px;
+      line-height: 150%;
+    }
+
+    @include mobile {
+      margin-bottom: 8px;
+      font-size: 14px;
+      line-height: 171%;
+    }
+  }
+
   &__label {
     display: block;
     max-width: 336px;
@@ -131,18 +151,19 @@
         width: 16px;
         height: 16px;
         transform: translate3d(0, -50%, 0);
-        background: url(../assets/icons/eye.svg);
+        background: url(../assets/icons/eye.svg) center / 16px no-repeat;
         transition: filter ease-in-out 0.1s;
+        filter: grayscale(1) brightness(5);
         cursor: pointer;
       }
 
       &.active::after {
-        filter: brightness(0.2);
+        filter: grayscale(0) brightness(1);
       }
     }
   }
 
-  &__recover {
+  &__recover, &__back {
     display: block;
     max-width: 336px;
     margin: 0 auto 24px;
@@ -170,6 +191,10 @@
         line-height: 143%;
       }
     }
+  }
+
+  &__back {
+    text-align: center;
   }
 
   & .button {
