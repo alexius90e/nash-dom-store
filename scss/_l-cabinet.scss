@@ -1,0 +1,265 @@
+.cabinet {
+  &__title {
+    margin-bottom: 24px;
+
+    @include laptop {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__back {
+    display: none;
+    margin: 24px 0;
+
+    @include laptop {
+      display: block;
+    }
+
+    @include mobile {
+      margin: 16px 0;
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: fit-content;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 150%;
+      color: #041862;
+
+      @include mobile {
+        font-size: 14px;
+        line-height: 143%;
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        flex: 0 0 auto;
+        width: 32px;
+        height: 32px;
+        background: url(../assets/icons/arrow-left.svg) center / cover no-repeat;
+
+        @include mobile {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    gap: 122px;
+    margin: 0 -40px;
+    padding: 32px 40px 40px;
+    border-bottom: 56px solid #ffffff;
+    background-color: #ececec;
+
+    @include desktop {
+      gap: 64px;
+    }
+
+    @include laptop {
+      flex-wrap: wrap;
+      margin: 0 -20px;
+      padding: 16px 20px 40px;
+    }
+
+    @include mobile {
+      margin: 0 -10px;
+      padding: 12px 10px 24px;
+      border-bottom-width: 48px;
+    }
+  }
+
+  &__sidebar {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 285px;
+    gap: 24px;
+
+    @include laptop {
+      flex: 1 1 100%;
+      gap: 16px;
+    }
+
+    @include mobile {
+      gap: 12px;
+    }
+
+    &-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 4px 8px;
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 160%;
+      color: #041862;
+
+      @include laptop {
+        margin: 0 -20px;
+        padding: 14px 24px;
+        font-weight: 600;
+        font-size: 24px;
+        line-height: 150%;
+        color: #041862;
+        background: url(../assets/icons/arrow-right.svg) center right 32px / 32px no-repeat;
+      }
+
+      @include mobile {
+        margin: 0 -10px;
+        padding: 12px 24px;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 150%;
+        color: #041862;
+        background-size: 24px;
+        background-position: center right 24px;
+      }
+
+      &.active {
+        font-weight: 500;
+        background-color: #ffffff;
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        flex: 0 0 auto;
+        width: 24px;
+        height: 24px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: all ease-in-out 0.1s;
+
+        @include laptop {
+          width: 32px;
+          height: 32px;
+        }
+
+        @include mobile {
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+      &:hover::before {
+        filter: brightness(2.5);
+      }
+
+      &_user::before {
+        background-image: url(../assets/icons/account.svg);
+      }
+
+      &_orders::before {
+        background-image: url(../assets/icons/box.svg);
+      }
+
+      &_security::before {
+        background-image: url(../assets/icons/security.svg);
+      }
+    }
+
+    &-logout {
+      display: flex;
+      display: none;
+      align-items: center;
+      gap: 16px;
+      max-width: fit-content;
+      padding: 0;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 150%;
+      color: #041862;
+      border: none;
+      transition: all ease-in-out 0.1s;
+
+      @include laptop {
+        display: flex;
+        margin-top: 24px;
+      }
+
+      @include mobile {
+        padding-left: 14px;
+        margin-top: 20px;
+        font-size: 16px;
+      }
+
+      &:hover {
+        color: #0535df;
+      }
+
+      &::before {
+        content: '';
+        display: block;
+        flex: 0 0 auto;
+        width: 32px;
+        height: 32px;
+        background-image: url(../assets/icons/logout.svg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        transition: all ease-in-out 0.1s;
+
+        @include mobile {
+          width: 24px;
+          height: 24px;
+        }
+      }
+
+      &:hover::before {
+        filter: brightness(2.5);
+      }
+    }
+  }
+
+  &__content {
+    flex: 1 1 auto;
+
+    & .auth-form {
+      @include laptop {
+        max-width: 336px;
+        margin: 0 auto;
+      }
+
+      &__content {
+        margin: 0;
+      }
+
+      &__title {
+        max-width: none;
+        text-align: left;
+
+        @include laptop {
+          text-align: center;
+        }
+      }
+
+      &__label {
+        max-width: 385px;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      & .button {
+        max-width: 208px;
+        margin: 0;
+
+        @include laptop {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  &__hidden-md {
+    @include laptop {
+      display: none;
+    }
+  }
+}

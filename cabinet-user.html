@@ -1574,81 +1574,150 @@
         <div class="container"></div>
       </section>
 
-      <section class="register">
+      <section class="cabinet">
         <div class="container">
           <nav class="breadcrumbs">
             <a class="breadcrumbs__item" href="./index.html">Главная</a>
-            <a class="breadcrumbs__item" href="./register.html">Регистрация</a>
+            <a class="breadcrumbs__item" href="./cabinet.html">Личный кабинет</a>
+            <a class="breadcrumbs__item" href="./cabinet-user.html">Личные данные</a>
           </nav>
 
-          <h2 class="register__title h2">Регистрация</h2>
+          <div class="cabinet__back">
+            <a class="cabinet__back-link" href="./cabinet.html">Вернуться в меню Личного кабинета</a>
+          </div>
 
-          <form class="auth-form">
-            <div class="auth-form__top">
-              <div class="auth-form__content">
-                <div class="auth-form__title">Зарегистрироваться</div>
+          <h2 class="cabinet__title h2">Личные данные</h2>
 
-                <div class="auth-form__description">Все поля обязательны к заполнению</div>
+          <div class="cabinet__wrapper">
+            <aside class="cabinet__sidebar cabinet__hidden-md">
+              <a
+                class="cabinet__sidebar-link cabinet__sidebar-link_user active"
+                href="./cabinet-user.html"
+              >
+                Личные данные
+              </a>
+              <a class="cabinet__sidebar-link cabinet__sidebar-link_orders" href="#">
+                Мои заказы
+              </a>
+              <a class="cabinet__sidebar-link cabinet__sidebar-link_security" href="#">
+                Пароль и безопасность
+              </a>
+              <button class="cabinet__sidebar-logout">Выйти из профиля</button>
+            </aside>
 
-                <label class="auth-form__label">
-                  <div class="auth-form__label-text">Имя</div>
-                  <div class="auth-form__input">
-                    <input type="text" id="registerName" name="name" required />
+            <div class="cabinet__content">
+              <div class="cabinet__user">
+                <form class="auth-form">
+                  <div class="auth-form__content">
+                    <div class="auth-form__title">Мои данные</div>
+
+                    <label class="auth-form__label">
+                      <div class="auth-form__label-text">Имя</div>
+                      <div class="auth-form__input">
+                        <input type="text" id="userName" name="name" value="Иван" required />
+                      </div>
+                    </label>
+
+                    <label class="auth-form__label">
+                      <div class="auth-form__label-text">Фамилия</div>
+                      <div class="auth-form__input">
+                        <input
+                          type="text"
+                          id="userSurname"
+                          name="surname"
+                          value="Иванов"
+                          required
+                        />
+                      </div>
+                    </label>
+
+                    <label class="auth-form__label">
+                      <div class="auth-form__label-text">Телефон</div>
+                      <div class="auth-form__input">
+                        <input
+                          type="tel"
+                          id="userPhone"
+                          name="phone"
+                          value="+7 123 456 78 90"
+                          placeholder="+7 999 999 99 99"
+                          required
+                        />
+                      </div>
+                    </label>
+
+                    <label class="auth-form__label">
+                      <div class="auth-form__label-text">E-mail</div>
+                      <div class="auth-form__input">
+                        <input
+                          type="email"
+                          id="userEmail"
+                          name="email"
+                          value="Ivanov@mail.ru"
+                          required
+                        />
+                      </div>
+                    </label>
+
+                    <label class="auth-form__label">
+                      <div class="auth-form__label-text">Бонусная карта</div>
+                      <div class="auth-form__input">
+                        <input
+                          type="text"
+                          id="userBonus"
+                          name="bonus"
+                          placeholder="Введите номер бонусной карты"
+                        />
+                      </div>
+                    </label>
+
+                    <label class="auth-form__label">
+                      <div class="auth-form__label-text">Регион</div>
+                      <div class="auth-form__input">
+                        <input type="text" id="userRegion" name="region" />
+                      </div>
+                    </label>
+
+                    <label class="auth-form__label">
+                      <div class="auth-form__label-text">Город</div>
+                      <div class="auth-form__input">
+                        <input type="text" id="userCity" name="city" />
+                      </div>
+                    </label>
+
+                    <label class="auth-form__label">
+                      <div class="auth-form__label-text">Улица</div>
+                      <div class="auth-form__input">
+                        <input type="text" id="userStreet" name="street" />
+                      </div>
+                    </label>
+
+                    <label class="auth-form__label">
+                      <div class="auth-form__label-text">Дом</div>
+                      <div class="auth-form__input">
+                        <input type="text" id="userHouse" name="house" />
+                      </div>
+                    </label>
+
+                    <label class="auth-form__label">
+                      <div class="auth-form__label-text">Корпус/строение</div>
+                      <div class="auth-form__input">
+                        <input type="text" id="userBuilding" name="building" />
+                      </div>
+                    </label>
+
+                    <label class="auth-form__label">
+                      <div class="auth-form__label-text">Квартира/офис</div>
+                      <div class="auth-form__input">
+                        <input type="text" id="userRoom" name="room" />
+                      </div>
+                    </label>
+
+                    <button class="button auth-form__submit">Сохранить</button>
                   </div>
-                </label>
-
-                <label class="auth-form__label">
-                  <div class="auth-form__label-text">Фамилия</div>
-                  <div class="auth-form__input">
-                    <input type="text" id="registerSurname" name="surname" required />
-                  </div>
-                </label>
-
-                <label class="auth-form__label">
-                  <div class="auth-form__label-text">Телефон</div>
-                  <div class="auth-form__input">
-                    <input type="tel" id="registerPhone" name="phone" placeholder="+7 999 999 99 99" required />
-                  </div>
-                </label>
-
-                <label class="auth-form__label">
-                  <div class="auth-form__label-text">E-mail</div>
-                  <div class="auth-form__input">
-                    <input type="email" id="registerEmail" name="email" required />
-                  </div>
-                </label>
-
-                <label class="auth-form__label">
-                  <div class="auth-form__label-text">Придумайте пароль</div>
-                  <div class="auth-form__input auth-form__input_password">
-                    <input type="password" id="registerPassword" name="password" required />
-                  </div>
-                </label>
-
-                <label class="auth-form__label">
-                  <div class="auth-form__label-text">Подтвердите пароль</div>
-                  <div class="auth-form__input auth-form__input_password">
-                    <input
-                      type="password"
-                      id="registerPasswordCheck"
-                      name="passwordCheck"
-                      required
-                    />
-                  </div>
-                </label>
+                </form>
               </div>
             </div>
-
-            <div class="auth-form__bottom">
-              <div class="auth-form__content">
-                <button class="button auth-form__submit" disabled>Создать профиль</button>
-
-                <div class="auth-form__back">
-                  <a class="auth-form__back-link" href="./login.html">Вернуться к предыдущему шагу</a>
-                </div>
-              </div>
-            </div>
-          </form>
+          </div>
         </div>
       </section>
     </main>
@@ -1724,18 +1793,5 @@
         </div>
       </div>
     </footer>
-
-    <div class="modal modal-register close">
-      <div class="modal__content">
-        <button class="modal__close close"></button>
-
-        <div class="modal__body">
-          <h3 class="modal-register__title">Профиль успешно создан!</h3>
-          <div class="modal-register__cabinet">
-            <a class="modal-register__cabinet-link close" href="#">В Личный кабинет</a>
-          </div>
-        </div>
-      </div>
-    </div>
   </body>
 </html>

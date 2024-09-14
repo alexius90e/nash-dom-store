@@ -1,3 +1,4 @@
+import "./imask.js";
 import "./sliders.js";
 import "./good-card.js";
 import "./good-info.js";
